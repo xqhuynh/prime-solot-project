@@ -1,5 +1,50 @@
-footer {
-  margin-top: 80px;
-  padding: 20px;
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  background-color: #853b1c;
+  border: solid 1px #853b1c;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  color: white;
+}
+
+.footer-left {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.footer-right {
+  margin-right: 40px;
+}
+
+.follow-us {
+  padding-bottom: 10px;
+}
+
+.sign-up {
+  padding-bottom: 10px;
+}
+
+.footer-icon {
+  margin-right: 10px;
+}
+
+.footer-email {
+  height: 30px;
+  padding-left: 5px;
+}
+
+.sign-up-button {
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #f4a261;
+  border: 1px solid #f4a261;
 }

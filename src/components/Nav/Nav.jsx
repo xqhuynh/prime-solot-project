@@ -34,6 +34,11 @@ function Navbar() {
             <Nav.Item as="li">
               <Nav.Link eventKey="link-2">About</Nav.Link>
             </Nav.Item>
+            <div className="profile-cart">
+              <Link to="/login">
+                <AccountCircleRoundedIcon className="profile" />
+              </Link>
+            </div>
           </Nav>
         )}
 
