@@ -1,14 +1,14 @@
 /* --------------------------------------------------------------------------------
 Grid
--------------------------------------------------------------------------------- */
+--------------------------------------------------------------------------------
 
 .grid {
   display: flex;
   flex: 0 1 auto;
-  /* defaults to 'row' */
+  defaults to 'row'
   flex-direction: row;
   flex-wrap: wrap;
-  /* defaults to 'flex-start' */
+  defaults to 'flex-start'
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -77,4 +77,61 @@ Grid
 .grid-col_12 {
   flex-basis: 100%;
   max-width: 100%;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+
+.hero-tag {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 125px;
+  margin-bottom: 50px;
+}
+
+.services-title {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: rgb(172, 99, 4);
+}
+
+.card-img-top {
+  width: 150px;
+  cursor: pointer;
+  border: 1px solid #ed7a1b;
+}
+
+.services-button {
+  border: none;
+  background-color: #ed7a1b;
+  width: 150px;
+  height: 35px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.services-button:hover {
+  background-color: #f0a76a;
+}
+
+.disclosure {
+  margin-bottom: 50px;
+}
+
+.hero-image {
+  width: 100%;
 }
