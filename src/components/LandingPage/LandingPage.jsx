@@ -5,6 +5,8 @@ import Card from "react-bootstrap/Card";
 
 // CUSTOM COMPONENTS
 // import RegisterForm from "../RegisterForm/RegisterForm";
+import Carousel from "../Carousel/Carousel";
+import Testimonial from "../Testimonial/Testimonial";
 
 function LandingPage() {
   // const [heading, setHeading] = useState("Welcome");
@@ -16,7 +18,7 @@ function LandingPage() {
 
   return (
     <div>
-      <img className="hero-image" src="./images/cake.jpg" />
+      <Carousel />
       <h2 className="hero-tag">
         Welcome to Sweet Surrender. Where happiness is in every slice!
       </h2>
@@ -59,8 +61,7 @@ function LandingPage() {
         <h4>*Please allow 3-5 business days for custom orders.</h4>
       </div>
 
-      {/* Carousel */}
-      <div className="carousel-container"></div>
+      <Testimonial />
     </div>
   );
 }
