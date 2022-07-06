@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 // import RegisterForm from "../RegisterForm/RegisterForm";
 import Carousel from "../Carousel/Carousel";
 import AboutPage from "../AboutPage/AboutPage";
+import CakesList from "../CakesList/CakesList";
 
 function LandingPage() {
   // const [heading, setHeading] = useState("Welcome");
@@ -22,8 +23,12 @@ function LandingPage() {
       <h2 className="hero-tag">
         Welcome to Sweet Surrender. Where happiness is in every slice!
       </h2>
-      <div className="services">
-        {/* Inventory card */}
+
+      {/* Cakes List */}
+      <CakesList />
+
+      {/* <div className="services">
+        Inventory card
         <div>
           <h4 className="services-title">CAKES</h4>
           <Card>
@@ -34,7 +39,7 @@ function LandingPage() {
           </Card>
         </div>
 
-        {/* Custom order card */}
+        Custom order card
         <div>
           <h4 className="services-title">CUSTOM ORDER</h4>
           <Card>
@@ -45,7 +50,7 @@ function LandingPage() {
           </Card>
         </div>
 
-        {/* About card */}
+        About card
         <div>
           <h4 className="services-title">ABOUT US</h4>
           <Card>
@@ -55,7 +60,7 @@ function LandingPage() {
             </Card.Body>
           </Card>
         </div>
-      </div>
+      </div> */}
 
       <div className="disclosure">
         <h4>
