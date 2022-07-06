@@ -6,6 +6,7 @@ function CakeDetail() {
   const dispatch = useDispatch();
   // Will need useParams to target individual cake item with id
   const params = useParams();
+  // Will need useSelector after active cake is retrieved from store
 
   // useEffect to dispatch 'FETCH_ACTIVE_CAKE' on page load
   useEffect(() => {
