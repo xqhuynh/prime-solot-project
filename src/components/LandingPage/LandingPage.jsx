@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 import "./LandingPage.css";
-import Card from "react-bootstrap/Card";
 
 // CUSTOM COMPONENTS
 // import RegisterForm from "../RegisterForm/RegisterForm";
@@ -26,41 +25,6 @@ function LandingPage() {
 
       {/* Cakes List */}
       <CakesList />
-
-      {/* <div className="services">
-        Inventory card
-        <div>
-          <h4 className="services-title">CAKES</h4>
-          <Card>
-            <Card.Img variant="top" src="./images/services-cake.jpg" />
-            <Card.Body>
-              <button className="services-button">View Inventory</button>
-            </Card.Body>
-          </Card>
-        </div>
-
-        Custom order card
-        <div>
-          <h4 className="services-title">CUSTOM ORDER</h4>
-          <Card>
-            <Card.Img variant="top" src="./images/contact.jpg" />
-            <Card.Body>
-              <button className="services-button">Contact Us</button>
-            </Card.Body>
-          </Card>
-        </div>
-
-        About card
-        <div>
-          <h4 className="services-title">ABOUT US</h4>
-          <Card>
-            <Card.Img variant="top" src="./images/inquire.jpg" />
-            <Card.Body>
-              <button className="services-button">Who We Are</button>
-            </Card.Body>
-          </Card>
-        </div>
-      </div> */}
 
       <div className="disclosure">
         <h4>
