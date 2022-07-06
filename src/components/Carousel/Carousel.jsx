@@ -11,7 +11,7 @@ function Carousel() {
 
   return (
     <div className="carousel-container">
-      <div className="carousel">
+      <div className="carousel-header">
         <div
           className="innerCarousel"
           style={{ backgroundImage: `url(${images[currImg].img})` }}

@@ -1,0 +1,54 @@
+.about-container {
+  margin-top: 75px;
+  background-color: antiquewhite;
+}
+
+.top-content,
+.bottom-content {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 25px;
+  width: 65%;
+}
+
+.about-header {
+  margin-bottom: 50px;
+  padding-top: 30px;
+  font-size: 2rem;
+}
+
+.baker-img,
+.caroline-img {
+  width: 300px;
+}
+
+.bottom-text,
+.top-text {
+  line-height: 30px;
+  text-align: left;
+}
+
+.bottom-content {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.owner-name,
+.owner-title {
+  text-align: left;
+}
+
+.owner-name {
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.owner-title {
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+hr {
+  margin-bottom: 10px;
+}

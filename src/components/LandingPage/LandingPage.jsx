@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 // CUSTOM COMPONENTS
 // import RegisterForm from "../RegisterForm/RegisterForm";
 import Carousel from "../Carousel/Carousel";
-import Testimonial from "../Testimonial/Testimonial";
+import AboutPage from "../AboutPage/AboutPage";
 
 function LandingPage() {
   // const [heading, setHeading] = useState("Welcome");
@@ -36,7 +36,7 @@ function LandingPage() {
 
         {/* Custom order card */}
         <div>
-          <h4 className="services-title">CUSTOM ORDER*</h4>
+          <h4 className="services-title">CUSTOM ORDER</h4>
           <Card>
             <Card.Img variant="top" src="./images/contact.jpg" />
             <Card.Body>
@@ -58,10 +58,12 @@ function LandingPage() {
       </div>
 
       <div className="disclosure">
-        <h4>*Please allow 3-5 business days for custom orders.</h4>
+        <h4>
+          *Please allow 3-5 business days for processing as cakes are made to
+          order.
+        </h4>
       </div>
-
-      <Testimonial />
+      <AboutPage />
     </div>
   );
 }
