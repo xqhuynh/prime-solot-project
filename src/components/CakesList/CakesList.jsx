@@ -8,6 +8,8 @@ function CakesList() {
   const dispatch = useDispatch();
   const cakes = useSelector((store) => store.cakes);
 
+  // useEffect to fetch cakes on page load
+  // dispatch 'FETCH_CAKES' to trigger saga
   useEffect(() => {
     dispatch({
       type: "FETCH_CAKES",
