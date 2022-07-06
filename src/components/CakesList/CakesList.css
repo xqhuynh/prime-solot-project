@@ -1,0 +1,15 @@
+.cake-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+.cake-card {
+  width: 275px;
+  height: 275px;
+  background-color: antiquewhite;
+  border: solid 1px black;
+}

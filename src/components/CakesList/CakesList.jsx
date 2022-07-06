@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./CakesList.css";
+// Will need Link for cake details view
 import { Link } from "react-router-dom";
 
 function CakesList() {
@@ -16,14 +17,14 @@ function CakesList() {
   return (
     <>
       <h2>Cakes List</h2>
-      <section className="cakes">
+      <section className="cake-container">
         {cakes.map((cake) => {
           return (
-            <ul key={cake.id}>
-              <li>
-                {cake.name} costs {cake.price}.{cake.description}
-              </li>
-            </ul>
+            <div>
+              <div className="cake-card">{cake.image}</div>
+              <div>{cake.name}</div>
+              <div>{cake.price}</div>
+            </div>
           );
         })}
       </section>
