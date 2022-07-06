@@ -21,7 +21,9 @@ function CakesList() {
         {cakes.map((cake) => {
           return (
             <div>
-              <div className="cake-card">{cake.image}</div>
+              <div className="cake-card">
+                <img className="cake-img" src={cake.image} />
+              </div>
               <div>{cake.name}</div>
               <div>{cake.price}</div>
             </div>

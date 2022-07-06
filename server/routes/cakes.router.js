@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   // GET route code here
   console.log('/cake GET route');
 
-  let queryText = `SELECT * FROM product;`;
+  let queryText = `SELECT * FROM product ORDER BY name ASC ;`;
 
   pool.query(queryText)
     .then((result) => {
