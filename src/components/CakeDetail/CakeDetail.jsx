@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import "./CakeDetail.css";
 
 function CakeDetail() {
   const dispatch = useDispatch();
@@ -20,8 +21,23 @@ function CakeDetail() {
 
   return (
     <>
-      <h2>Cake Details View</h2>
-      {cakeDetails.name}
+      <h2 className="details-header">Cake Details View</h2>
+      {/* Details container */}
+      <div className="details-container">
+        <img className="cake-img" src={cakeDetails.image} />
+        <div className="details-info">
+          <p className="details-name">{cakeDetails.name}</p>
+          <p className="details-price">Price: ${cakeDetails.price}</p>
+          <p className="process-time">Process Time: 3-5 days</p>
+          {/* Buttons */}
+          <button className="details-cart">Add to cart</button>
+          <span>
+            <button className="details-buy">Buy it now</button>
+          </span>
+        </div>
+      </div>
+      <h4>Product Description</h4>
+      <div className="product-desc">{cakeDetails.description}</div>
     </>
   );
 }

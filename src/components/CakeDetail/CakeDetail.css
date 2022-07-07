@@ -1,0 +1,17 @@
+.details-container {
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
+}
+
+.details-header {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.details-info {
+  margin-left: 50px;
+  border: 1px solid black;
+  width: 30%;
+  height: 300px;
+}
