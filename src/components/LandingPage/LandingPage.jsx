@@ -7,6 +7,7 @@ import "./LandingPage.css";
 import Carousel from "../Carousel/Carousel";
 import AboutPage from "../AboutPage/AboutPage";
 import CakesList from "../CakesList/CakesList";
+import Contact from "../Contact/Contact";
 
 function LandingPage() {
   // const [heading, setHeading] = useState("Welcome");
@@ -33,6 +34,7 @@ function LandingPage() {
         </h4>
       </div>
       <AboutPage />
+      <Contact />
     </div>
   );
 }

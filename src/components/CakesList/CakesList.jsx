@@ -31,7 +31,7 @@ function CakesList() {
       <section className="cake-container">
         {cakes.map((cake) => {
           return (
-            <div>
+            <div key={cake.id}>
               <div className="cake-card">
                 <img className="cake-img" src={cake.image} />
               </div>
