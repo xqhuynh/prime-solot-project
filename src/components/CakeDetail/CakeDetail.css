@@ -15,3 +15,17 @@
   width: 30%;
   height: 300px;
 }
+
+.details-cart,
+.details-buy {
+  background-color: orange;
+  border: none;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  color: white;
+}
+
+.details-cart {
+  margin-right: 15px;
+}

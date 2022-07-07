@@ -21,7 +21,7 @@ function CakeDetail() {
 
   return (
     <>
-      <h2 className="details-header">Cake Details View</h2>
+      <h2 className="details-header">Cake Details</h2>
       {/* Details container */}
       <div className="details-container">
         <img className="cake-img" src={cakeDetails.image} />
