@@ -18,7 +18,16 @@ function CakesList() {
 
   return (
     <>
-      <h2>Cakes List</h2>
+      <h2 className="cake-header">Cake Collection</h2>
+      <form className="sort">
+        <label className="sort-name">Sort</label>
+        <select className="drop-down">
+          <option value="best-selling">Best Selling</option>
+          <option value="alphabetical">Alphabetical</option>
+          <option value="price">Price: Low to High</option>
+        </select>
+      </form>
+
       <section className="cake-container">
         {cakes.map((cake) => {
           return (
@@ -26,8 +35,9 @@ function CakesList() {
               <div className="cake-card">
                 <img className="cake-img" src={cake.image} />
               </div>
-              <div>{cake.name}</div>
-              <div>{cake.price}</div>
+              <div className="cake-name">{cake.name}</div>
+              <div className="cake-price">${cake.price}</div>
+              <button className="add-to-cart">Add to cart</button>
             </div>
           );
         })}
