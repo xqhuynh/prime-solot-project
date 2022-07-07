@@ -32,9 +32,12 @@ function CakesList() {
         {cakes.map((cake) => {
           return (
             <div key={cake.id}>
-              <div className="cake-card">
-                <img className="cake-img" src={cake.image} />
-              </div>
+              <Link to={`/cakes/${cake.id}`}>
+                <div className="cake-card">
+                  <img className="cake-img" src={cake.image} />
+                </div>
+              </Link>
+
               <div className="cake-name">{cake.name}</div>
               <div className="cake-price">${cake.price}</div>
               <button className="add-to-cart">Add to cart</button>

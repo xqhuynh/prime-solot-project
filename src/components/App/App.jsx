@@ -19,6 +19,7 @@ import InfoPage from "../InfoPage/InfoPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
+import CakeDetail from "../CakeDetail/CakeDetail";
 
 import "./App.css";
 
@@ -46,6 +47,12 @@ function App() {
             path="/about"
           >
             <AboutPage />
+          </Route>
+
+          {/* Details page */}
+          {/* app.get('/cakes/:id') <- req.params.id */}
+          <Route path="/cakes/:id" exact>
+            <CakeDetail />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.

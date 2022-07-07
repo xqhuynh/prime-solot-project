@@ -6,7 +6,7 @@ function* fetchActiveCake(action) {
     console.log('in fetchActiveCake');
     try {
         const res = yield axios.get(`/api/cakes/${action.payload}`)
-
+        console.log('Get active cake', res.data);
         yield put({
             type: 'SET_ACTIVE_CAKE',
             payload: res.data
@@ -18,7 +18,7 @@ function* fetchActiveCake(action) {
 }
 
 function* cakeDetailSaga() {
-    yield takeEvery('FETCH_ACTIVE_CAKE', fetchActiveCake)
+    yield takeEvery("FETCH_ACTIVE_CAKE", fetchActiveCake)
 }
 
 export default cakeDetailSaga;
