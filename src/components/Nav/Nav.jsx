@@ -32,7 +32,7 @@ function Navbar() {
               <Nav.Link eventKey="link-2">Contact</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-2">About</Nav.Link>
+              <Nav.Link eventKey="link-3">About</Nav.Link>
             </Nav.Item>
             <div className="profile-cart">
               <Link to="/login">
