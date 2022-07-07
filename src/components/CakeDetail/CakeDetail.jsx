@@ -29,6 +29,8 @@ function CakeDetail() {
           <p className="details-name">{cakeDetails.name}</p>
           <p className="details-price">Price: ${cakeDetails.price}</p>
           <p className="process-time">Process Time: 3-5 days</p>
+          <p className="desc-header">Description:</p>
+          <p className="details-desc">{cakeDetails.description}</p>
           {/* Buttons */}
           <button className="details-cart">Add to cart</button>
           <span>
@@ -36,8 +38,6 @@ function CakeDetail() {
           </span>
         </div>
       </div>
-      <h4>Product Description</h4>
-      <div className="product-desc">{cakeDetails.description}</div>
     </>
   );
 }
