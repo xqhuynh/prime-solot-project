@@ -2,9 +2,10 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 20px;
+  grid-row-gap: 25px;
   background-color: antiquewhite;
+  margin-bottom: 50px;
 }
 
 .first-name {
@@ -23,6 +24,6 @@
 }
 
 .comment {
-  grid-area: 3 / 1 / 5 / 3;
+  grid-area: 3 / 1 / 10 / 3;
   border: 1px solid black;
 }

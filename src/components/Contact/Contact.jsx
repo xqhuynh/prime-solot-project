@@ -6,6 +6,7 @@ function Contact() {
     <>
       <h2>Contact Form</h2>
 
+      <div>Contact Us</div>
       <div className="parent">
         <div className="first-name">First Name</div>
         <div className="last-name">Last Name</div>
