@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutPage.css";
-import Baking from "./images/baking.jpg";
-import Caroline from "./images/caroline.jpeg";
+import Caroline from "../Utils/caroline.jpeg";
+import Baking from "../Utils/baking.jpg";
 
 // This is one of our simplest components
 // It doesn't have local state,
