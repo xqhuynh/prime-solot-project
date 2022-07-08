@@ -26,7 +26,7 @@ function Navbar() {
               <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link href="/home/#shop">Shop</Nav.Link>
+              <Nav.Link eventKey="link-1">Shop</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-2">Contact</Nav.Link>
@@ -38,7 +38,9 @@ function Navbar() {
               <Link to="/login">
                 <AccountCircleRoundedIcon className="profile" />
               </Link>
-              <ShoppingCartRoundedIcon className="cart" />
+              <Link to="/cart">
+                <ShoppingCartRoundedIcon className="cart" />
+              </Link>
             </div>
           </Nav>
         )}

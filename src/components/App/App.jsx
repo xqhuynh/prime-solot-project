@@ -20,6 +20,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import CakeDetail from "../CakeDetail/CakeDetail";
+import Cart from "../Cart/Cart";
 
 import "./App.css";
 
@@ -53,6 +54,10 @@ function App() {
           {/* app.get('/cakes/:id') <- req.params.id */}
           <Route path="/cakes/:id" exact>
             <CakeDetail />
+          </Route>
+
+          <Route path="/cart" exact>
+            <Cart />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.

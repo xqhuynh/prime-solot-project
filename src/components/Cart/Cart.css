@@ -1,0 +1,102 @@
+.checkout-header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.step-one {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.checkout-container {
+  width: 30%;
+  border: 2px solid rgb(200, 200, 200);
+  text-align: left;
+  padding-left: 50px;
+  padding-bottom: 30px;
+}
+
+.MuiTextField-root {
+  background-color: rgb(231, 231, 231);
+  width: 70%;
+}
+
+.MuiOutlinedInput-root {
+  height: 30px;
+}
+
+.checkout-label,
+.input {
+  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.payment-btn {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 80%;
+  height: 40px;
+  cursor: pointer;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.payment-btn:hover {
+  background-color: rgb(230, 189, 114);
+}
+
+.cust-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-bottom: 50px;
+}
+
+.payment-card,
+.paypal-card {
+  display: flex;
+  width: 300px;
+  border: 1px solid black;
+  background-color: rgb(231, 231, 231);
+  height: 40px;
+  border-radius: 5px;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.payment-card:hover,
+.paypal-card:hover {
+  background-color: rgb(176, 175, 175);
+}
+
+.step-two {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.card-icon {
+  margin-left: 10px;
+}
+
+.card-text {
+  padding-left: 20px;
+}
+
+.arrow {
+  margin-left: 175px;
+}
+
+.paypal-arrow {
+  margin-left: 160px;
+}
+
+.paypal-card {
+  margin-top: 20px;
+}
