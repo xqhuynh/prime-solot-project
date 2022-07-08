@@ -20,7 +20,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import CakeDetail from "../CakeDetail/CakeDetail";
-
+import Checkout from "../Checkout/Checkout";
 import "./App.css";
 
 function App() {
@@ -39,20 +39,24 @@ function App() {
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
-
-          {/* Visiting localhost:3000/about will show the about page. */}
+          {/* 
+          Visiting localhost:3000/about will show the about page.
           <Route
-            // shows AboutPage at all times (logged in or not)
+            shows AboutPage at all times (logged in or not)
             exact
             path="/about"
           >
             <AboutPage />
-          </Route>
+          </Route> */}
 
           {/* Details page */}
           {/* app.get('/cakes/:id') <- req.params.id */}
           <Route path="/cakes/:id" exact>
             <CakeDetail />
+          </Route>
+
+          <Route path="/checkout" exact>
+            <Checkout />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.

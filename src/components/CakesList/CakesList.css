@@ -24,7 +24,7 @@
   flex-wrap: wrap;
   gap: 75px;
   justify-content: center;
-  margin: 50px 50px;
+  margin: 50px 75px;
 }
 
 .cake-img {
@@ -33,6 +33,7 @@
   margin-bottom: 15px;
   border: 2px solid rgb(131, 51, 8);
   box-shadow: 12px 12px 2px 1px rgba(104, 107, 108, 0.2);
+  object-fit: cover;
 }
 
 .cake-name,

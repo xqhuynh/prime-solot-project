@@ -5,7 +5,7 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
 }
 
@@ -68,6 +68,7 @@ Button
   background: none;
   font: inherit;
   color: #444;
+  margin-bottom: 50px;
 }
 
 .btn_asLink:hover {
@@ -100,7 +101,7 @@ Form Treatment
   width: 400px;
   max-width: 100%;
   padding: 25px;
-  margin: 0 auto 20px;
+  margin: 50px auto 20px;
   background-color: #efefef;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);

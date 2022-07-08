@@ -1,7 +1,7 @@
 .details-container {
   display: flex;
   justify-content: center;
-  background-color: antiquewhite;
+  margin-bottom: 100px;
 }
 
 .details-header {
@@ -10,10 +10,51 @@
 }
 
 .details-info {
-  margin-left: 50px;
-  border: 1px solid black;
-  width: 30%;
+  margin-left: 100px;
+  width: 25%;
   height: 300px;
+  text-align: left;
+}
+
+.desc-header {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.details-cart,
+.details-buy {
+  background-color: orange;
+  border: none;
+  width: 100px;
+  height: 35px;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+.details-cart {
+  margin-right: 15px;
+}
+
+.details-name,
+.details-price {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.process-time {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.details-name {
+  font-size: 1.3rem;
+}
+
+.details-desc {
+  font-size: 0.9rem;
+  text-align: left;
+  margin-bottom: 25px;
 }
 
 .details-cart,

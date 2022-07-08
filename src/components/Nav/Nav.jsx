@@ -38,7 +38,9 @@ function Navbar() {
               <Link to="/login">
                 <AccountCircleRoundedIcon className="profile" />
               </Link>
-              <ShoppingCartRoundedIcon className="cart" />
+              <Link to="/checkout">
+                <ShoppingCartRoundedIcon className="cart" />
+              </Link>
             </div>
           </Nav>
         )}
@@ -54,7 +56,7 @@ function Navbar() {
               <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-1">Shop</Nav.Link>
+              <Nav.Link eventKey="#shop">Shop</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-2">Contact</Nav.Link>
@@ -68,7 +70,7 @@ function Navbar() {
                 <AccountCircleRoundedIcon className="profile" />
               </Link>
               {/* Will need link to checkout page */}
-              <ShoppingCartRoundedIcon className="cart" />
+              <ShoppingCartRoundedIcon className="checkout" />
             </div>
           </Nav>
         )}
