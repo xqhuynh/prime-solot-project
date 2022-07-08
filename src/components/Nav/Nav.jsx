@@ -38,7 +38,7 @@ function Navbar() {
               <Link to="/login">
                 <AccountCircleRoundedIcon className="profile" />
               </Link>
-              <Link to="/cart">
+              <Link to="/checkout">
                 <ShoppingCartRoundedIcon className="cart" />
               </Link>
             </div>
@@ -70,7 +70,7 @@ function Navbar() {
                 <AccountCircleRoundedIcon className="profile" />
               </Link>
               {/* Will need link to checkout page */}
-              <ShoppingCartRoundedIcon className="cart" />
+              <ShoppingCartRoundedIcon className="checkout" />
             </div>
           </Nav>
         )}

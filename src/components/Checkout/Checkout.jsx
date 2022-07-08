@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./Cart.css";
+import "./Checkout.css";
 import TextField from "@mui/material/TextField";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-function Cart() {
+function CheckOut() {
   const cakes = useSelector((store) => store.cakes);
 
   return (
@@ -80,4 +80,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CheckOut;
