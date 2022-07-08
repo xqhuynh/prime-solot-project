@@ -18,7 +18,9 @@ function CakesList() {
 
   return (
     <>
-      <h2 className="cake-header">Cake Collection</h2>
+      <h2 id="shop" className="cake-header">
+        Cake Collection
+      </h2>
       <form className="sort">
         <label className="sort-name">Sort</label>
         <select className="drop-down">

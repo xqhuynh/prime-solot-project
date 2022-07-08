@@ -26,7 +26,7 @@ function Navbar() {
               <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-1">Shop</Nav.Link>
+              <Nav.Link href="/home/#shop">Shop</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-2">Contact</Nav.Link>
@@ -54,7 +54,7 @@ function Navbar() {
               <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-1">Shop</Nav.Link>
+              <Nav.Link eventKey="#shop">Shop</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-2">Contact</Nav.Link>
