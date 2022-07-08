@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-function CheckOut() {
+function Checkout() {
   const cakes = useSelector((store) => store.cakes);
 
   return (
@@ -80,4 +80,4 @@ function CheckOut() {
   );
 }
 
-export default CheckOut;
+export default Checkout;
