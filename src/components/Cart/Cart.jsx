@@ -23,9 +23,9 @@ function Cart() {
             <div>{cakeDetails.name}</div>
             <div>{cakeDetails.price}</div>
             <div className="qty-button">
-              <button>-</button>
+              <button className="minus-button">-</button>
               <p>1</p>
-              <button>+</button>
+              <button className="plus-button">+</button>
             </div>
             <p>Items in cart: {cart}</p>
           </div>

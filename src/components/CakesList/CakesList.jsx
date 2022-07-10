@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CakeItem from "../CakeItem/CakeItem";
 import "./CakesList.css";
-// Will need Link for cake details view
-import { Link, useParams } from "react-router-dom";
 
 function CakesList() {
   const dispatch = useDispatch();
@@ -30,7 +28,7 @@ function CakesList() {
           <option value="price">Price: Low to High</option>
         </select>
       </form>
-
+      {/* Map through list and pass item to CakeItem component */}
       <section className="cake-container">
         {cakes.map((item) => {
           return <CakeItem key={item.id} item={item} />;
