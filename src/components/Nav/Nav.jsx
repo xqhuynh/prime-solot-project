@@ -6,10 +6,24 @@ import { useSelector } from "react-redux";
 
 import Nav from "react-bootstrap/Nav";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
 
 function Navbar() {
+  // bring in useSelector for user and cart reducers
   const user = useSelector((store) => store.user);
+  const cart = useSelector((store) => store.cart);
+
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+    },
+  }));
 
   return (
     <div>
@@ -36,10 +50,16 @@ function Navbar() {
             </Nav.Item>
             <div className="profile-cart">
               <Link to="/login">
-                <AccountCircleRoundedIcon className="profile" />
+                <IconButton aria-label="profile-icon">
+                  <AccountBoxIcon className="profile" />
+                </IconButton>
               </Link>
               <Link to="/cart">
-                <ShoppingCartRoundedIcon className="cart" />
+                <IconButton aria-label="cart">
+                  <StyledBadge badgeContent={cart} showZero color="primary">
+                    <ShoppingCartRoundedIcon className="cart" />
+                  </StyledBadge>
+                </IconButton>
               </Link>
             </div>
           </Nav>

@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import CakeItem from "../CakeItem/CakeItem";
 import "./CakesList.css";
 // Will need Link for cake details view
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function CakesList() {
   const dispatch = useDispatch();
+  const params = useParams();
   const cakes = useSelector((store) => store.cakes);
 
   // useEffect to fetch cakes on page load
@@ -15,6 +17,13 @@ function CakesList() {
       type: "FETCH_CAKES",
     });
   }, []);
+
+  const addCarthandle = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: Number(params.id),
+    });
+  };
 
   return (
     <>
@@ -44,7 +53,9 @@ function CakesList() {
                 <Link to={`/cakes/${cake.id}`}>
                   <button className="view-item">View Item</button>
                 </Link>
-                <button className="add-to-cart">Add to cart</button>
+                <button onClick={addCarthandle} className="add-to-cart">
+                  Add to cart
+                </button>
               </span>
             </div>
           );

@@ -77,10 +77,6 @@
   list-style-type: none;
 }
 
-.cart-pic {
-  margin-left: 30px;
-}
-
 .logo {
   width: 130px;
 }
@@ -88,15 +84,6 @@
 .cart,
 .profile {
   color: white;
-}
-
-.profile {
-  margin-right: 20px;
-  margin-left: 30px;
-}
-
-.cart {
-  margin-right: 30px;
 }
 
 .home-link {
