@@ -21,6 +21,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import CakeDetail from "../CakeDetail/CakeDetail";
 import Checkout from "../Checkout/Checkout";
+import Cart from "../Cart/Cart";
 import "./App.css";
 
 function App() {
@@ -57,6 +58,10 @@ function App() {
 
           <Route path="/checkout" exact>
             <Checkout />
+          </Route>
+
+          <Route path="/cart" exact>
+            <Cart />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./CakeDetail.css";
 
 function CakeDetail() {
@@ -19,9 +20,16 @@ function CakeDetail() {
     });
   }, [params.id]);
 
+  const addCarthandle = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: Number(params.id),
+    });
+  };
+
   return (
     <>
-      <h2 className="details-header">Cake Details View</h2>
+      <h2 className="details-header">Cake Details</h2>
       {/* Details container */}
       <div className="details-container">
         <img className="cake-img" src={cakeDetails.image} />
@@ -32,10 +40,12 @@ function CakeDetail() {
           <p className="desc-header">Description:</p>
           <p className="details-desc">{cakeDetails.description}</p>
           {/* Buttons */}
-          <button className="details-cart">Add to cart</button>
-          <span>
-            <button className="details-buy">Buy it now</button>
-          </span>
+          <button onClick={addCarthandle} className="details-cart">
+            Add to cart
+          </button>
+          <Link to={`/`}>
+            <button className="shop-button">Continue Shopping</button>
+          </Link>
         </div>
       </div>
     </>

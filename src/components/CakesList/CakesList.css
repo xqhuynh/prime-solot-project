@@ -38,7 +38,7 @@
 
 .cake-name,
 .cake-price {
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 
 .cake-name {
@@ -48,9 +48,11 @@
 
 .cake-price {
   color: red;
+  font-size: 1.1rem;
 }
 
-.add-to-cart {
+.add-to-cart,
+.view-item {
   width: 125px;
   height: 30px;
   background-color: rgba(201, 86, 9, 0.796);
@@ -61,6 +63,11 @@
   cursor: pointer;
 }
 
-.add-to-cart:hover {
+.add-to-cart:hover,
+.view-item:hover {
   background-color: rgba(199, 146, 110, 0.796);
+}
+
+.view-item {
+  margin-right: 15px;
 }

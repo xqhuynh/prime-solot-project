@@ -1,0 +1,12 @@
+.cart-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  width: 50%;
+  height: auto;
+}
+
+.qty-button {
+  display: inline-flex;
+}
