@@ -1,3 +1,11 @@
+.cake-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 75px;
+  justify-content: center;
+  margin: 50px 75px;
+}
+
 .cake-header {
   font-size: 2rem;
   margin-bottom: 50px;
@@ -17,57 +25,4 @@
   background-color: rgb(222, 219, 219);
   border: 1px solid rgb(188, 185, 185);
   cursor: pointer;
-}
-
-.cake-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 75px;
-  justify-content: center;
-  margin: 50px 75px;
-}
-
-.cake-img {
-  width: 275px;
-  height: 310px;
-  margin-bottom: 15px;
-  border: 2px solid rgb(131, 51, 8);
-  box-shadow: 12px 12px 2px 1px rgba(104, 107, 108, 0.2);
-  object-fit: cover;
-}
-
-.cake-name,
-.cake-price {
-  margin-bottom: 10px;
-}
-
-.cake-name {
-  color: rgb(106, 72, 7);
-  font-size: 1.1rem;
-}
-
-.cake-price {
-  color: red;
-  font-size: 1.1rem;
-}
-
-.add-to-cart,
-.view-item {
-  width: 125px;
-  height: 30px;
-  background-color: rgba(201, 86, 9, 0.796);
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.add-to-cart:hover,
-.view-item:hover {
-  background-color: rgba(199, 146, 110, 0.796);
-}
-
-.view-item {
-  margin-right: 15px;
 }

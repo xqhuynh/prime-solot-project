@@ -7,7 +7,6 @@ import { Link, useParams } from "react-router-dom";
 
 function CakesList() {
   const dispatch = useDispatch();
-  const params = useParams();
   const cakes = useSelector((store) => store.cakes);
 
   // useEffect to fetch cakes on page load
@@ -17,13 +16,6 @@ function CakesList() {
       type: "FETCH_CAKES",
     });
   }, []);
-
-  const addCarthandle = () => {
-    dispatch({
-      type: "ADD_TO_CART",
-      payload: Number(params.id),
-    });
-  };
 
   return (
     <>
@@ -40,25 +32,8 @@ function CakesList() {
       </form>
 
       <section className="cake-container">
-        {cakes.map((cake) => {
-          return (
-            <div key={cake.id}>
-              <div className="cake-card">
-                <img className="cake-img" src={cake.image} />
-              </div>
-
-              <div className="cake-name">{cake.name}</div>
-              <div className="cake-price">${cake.price}</div>
-              <span className="cake-buttons">
-                <Link to={`/cakes/${cake.id}`}>
-                  <button className="view-item">View Item</button>
-                </Link>
-                <button onClick={addCarthandle} className="add-to-cart">
-                  Add to cart
-                </button>
-              </span>
-            </div>
-          );
+        {cakes.map((item) => {
+          return <CakeItem key={item.id} item={item} />;
         })}
       </section>
     </>
