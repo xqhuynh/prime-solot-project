@@ -17,6 +17,9 @@ function Cart() {
           return <CartItem key={item.id} item={item} />;
         })}
       </div>
+      <Link to="/checkout">
+        <button className="checkout-button">Checkout</button>
+      </Link>
     </>
   );
 }

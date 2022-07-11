@@ -9,4 +9,13 @@
   width: 50%;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.qty-counter {
+  display: flex;
+}
+
+.cart-desc {
+  width: 20%px;
 }

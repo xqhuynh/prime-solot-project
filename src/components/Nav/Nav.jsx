@@ -37,7 +37,7 @@ function Navbar() {
             </Link>
 
             <Nav.Item as="li">
-              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-1">Shop</Nav.Link>
@@ -74,7 +74,7 @@ function Navbar() {
             </Link>
 
             <Nav.Item as="li">
-              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-1">Shop</Nav.Link>
@@ -93,7 +93,11 @@ function Navbar() {
               </Link>
               <Link to="/cart">
                 <IconButton aria-label="cart">
-                  <StyledBadge badgeContent={0} showZero color="primary">
+                  <StyledBadge
+                    badgeContent={cart.length}
+                    showZero
+                    color="primary"
+                  >
                     <ShoppingCartRoundedIcon className="cart" />
                   </StyledBadge>
                 </IconButton>
