@@ -25,7 +25,12 @@ function CakeDetail() {
   const addCarthandle = () => {
     dispatch({
       type: "ADD_TO_CART",
-      payload: Number(params.id),
+      payload: {
+        id: cakeDetails.id,
+        name: cakeDetails.name,
+        image: cakeDetails.image,
+        description: cakeDetails.description,
+      },
     });
   };
 

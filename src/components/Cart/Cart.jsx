@@ -8,7 +8,6 @@ import "./Cart.css";
 function Cart() {
   // Will need useSelector after active cake is retrieved from store
   // calling it cakeDetail
-  const cakeDetails = useSelector((store) => store.cakeDetail);
   const cart = useSelector((store) => store.cart);
 
   return (
@@ -17,17 +16,17 @@ function Cart() {
       <div className="cart-container">
         <div className="cart-card">
           <div className="cart-img">
-            <img className="cake-img" src={cakeDetails.image} />
+            <img className="cake-img" src={cart.image} />
           </div>
           <div className="cart-body">
-            <div>{cakeDetails.name}</div>
-            <div>{cakeDetails.price}</div>
+            <div>{cart.name}</div>
+            <div>{cart.price}</div>
             <div className="qty-button">
               <button className="minus-button">-</button>
               <p>1</p>
               <button className="plus-button">+</button>
             </div>
-            <p>Items in cart: {cart}</p>
+            <p>Items in cart: 0</p>
           </div>
         </div>
         <button>Continue Shopping</button>

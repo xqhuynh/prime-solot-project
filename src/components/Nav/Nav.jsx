@@ -56,7 +56,7 @@ function Navbar() {
               </Link>
               <Link to="/cart">
                 <IconButton aria-label="cart">
-                  <StyledBadge badgeContent={cart} showZero color="primary">
+                  <StyledBadge badgeContent={0} showZero color="primary">
                     <ShoppingCartRoundedIcon className="cart" />
                   </StyledBadge>
                 </IconButton>
@@ -87,10 +87,10 @@ function Navbar() {
             {/* Profile and cart icon links */}
             <div className="profile-cart">
               <Link to="/login">
-                <AccountCircleRoundedIcon className="profile" />
+                <AccountBoxIcon className="profile" />
               </Link>
               {/* Will need link to checkout page */}
-              <ShoppingCartRoundedIcon className="checkout" />
+              <ShoppingCartRoundedIcon className="cart" />
             </div>
           </Nav>
         )}
