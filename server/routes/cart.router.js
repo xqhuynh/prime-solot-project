@@ -23,4 +23,29 @@ router.post('/', rejectUnauthenticated, (req, res) => {
         })
 })
 
+// Create Twilio client
+
+const client = require('twilio')('ACd1dba4ade8696ddb77a63102d3452a8c', '102f93e17a1a70ba94817ab84ca76f98');
+
+router.get('/success', (req, res) => {
+    sendTextMessage();
+    res.send(`
+        <div>
+            <h1>My Twilio API test</h1>
+            <h2>Message sent successfully.</h2>
+        </div>
+    `)
+})
+
+function sendTextMessage() {
+    client.messages
+        .create({
+            body: 'Hi Savon. Your order is being processed. Thank you and have a blessed day',
+            from: '+18573758075',
+            to: '16123867919'
+        })
+        .then(message => console.log(message.sid))
+        .catch(error => console.log(error))
+}
+
 module.exports = router;

@@ -21,4 +21,9 @@
   font-size: 1.1rem;
   margin-top: 50px;
   margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: rgb(243, 194, 104);
 }

@@ -4,9 +4,10 @@ import "./Checkout.css";
 import TextField from "@mui/material/TextField";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import CheckoutItem from "../CheckoutItem/CheckoutItem";
 
 function CheckOut() {
-  const cakes = useSelector((store) => store.cakes);
+  const cart = useSelector((store) => store.cart);
 
   return (
     <>
@@ -65,14 +66,15 @@ function CheckOut() {
             <p className="card-text">PayPal</p>
             <ArrowForwardIosIcon className="paypal-arrow" />
           </div>
-          <div className="sales-info">
-            <p>ORDER SUMMARY</p>
-            <div className="cake-quantity">
-              <p>1 x {cakes[0].name}</p>
-              <p>${cakes[0].price}</p>
-            </div>
+
+          <p>ORDER SUMMARY</p>
+          <div>
+            {cart.map((item) => {
+              return <CheckoutItem key={item.id} item={item} />;
+            })}
           </div>
 
+          <p>Total: {}</p>
           <button className="payment-btn">Place Order</button>
         </div>
       </div>

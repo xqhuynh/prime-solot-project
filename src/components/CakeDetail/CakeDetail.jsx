@@ -8,8 +8,6 @@ function CakeDetail() {
   const dispatch = useDispatch();
   // Will need useParams to target individual cake item with id
   const params = useParams();
-  // Set quantity state w/useState
-  const [qty, setQty] = useState(1);
   // Will need useSelector after active cake is retrieved from store
   // calling it cakeDetail
   const cakeDetails = useSelector((store) => store.cakeDetail);
@@ -22,6 +20,8 @@ function CakeDetail() {
     });
   }, [params.id]);
 
+  // Dispatch ADD_TO_CART action to store item in cart
+  // payload is any info from cakeDetails reducer
   const addCarthandle = () => {
     dispatch({
       type: "ADD_TO_CART",
