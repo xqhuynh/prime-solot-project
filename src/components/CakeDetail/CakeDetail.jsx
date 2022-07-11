@@ -27,6 +27,7 @@ function CakeDetail() {
       type: "ADD_TO_CART",
       payload: {
         id: cakeDetails.id,
+        price: cakeDetails.price,
         name: cakeDetails.name,
         image: cakeDetails.image,
         description: cakeDetails.description,

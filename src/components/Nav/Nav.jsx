@@ -54,13 +54,13 @@ function Navbar() {
                   <AccountBoxIcon className="profile" />
                 </IconButton>
               </Link>
-              <Link to="/cart">
+              {/* <Link to="/cart">
                 <IconButton aria-label="cart">
                   <StyledBadge badgeContent={0} showZero color="primary">
                     <ShoppingCartRoundedIcon className="cart" />
                   </StyledBadge>
                 </IconButton>
-              </Link>
+              </Link> */}
             </div>
           </Nav>
         )}
@@ -72,25 +72,32 @@ function Navbar() {
             <Link className="home-link" to="/home">
               <img className="logo" src="./images/logo3.png" alt="logo" />
             </Link>
+
             <Nav.Item as="li">
               <Nav.Link href="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="#shop">Shop</Nav.Link>
+              <Nav.Link eventKey="link-1">Shop</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-2">Contact</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-2">About</Nav.Link>
+              <Nav.Link eventKey="link-3">About</Nav.Link>
             </Nav.Item>
-            {/* Profile and cart icon links */}
             <div className="profile-cart">
               <Link to="/login">
-                <AccountBoxIcon className="profile" />
+                <IconButton aria-label="profile-icon">
+                  <AccountBoxIcon className="profile" />
+                </IconButton>
               </Link>
-              {/* Will need link to checkout page */}
-              <ShoppingCartRoundedIcon className="cart" />
+              <Link to="/cart">
+                <IconButton aria-label="cart">
+                  <StyledBadge badgeContent={0} showZero color="primary">
+                    <ShoppingCartRoundedIcon className="cart" />
+                  </StyledBadge>
+                </IconButton>
+              </Link>
             </div>
           </Nav>
         )}

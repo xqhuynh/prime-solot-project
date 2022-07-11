@@ -1,0 +1,12 @@
+.cart-img {
+  width: 25%;
+  height: 25%;
+}
+
+.cart-container {
+  display: flex;
+  background-color: antiquewhite;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
