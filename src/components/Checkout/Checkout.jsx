@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Checkout.css";
 import TextField from "@mui/material/TextField";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
@@ -8,6 +8,15 @@ import CheckoutItem from "../CheckoutItem/CheckoutItem";
 
 function CheckOut() {
   const cart = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
+
+  // Dispatch action type ADD_ORDER
+  const handlePlaceOrder = () => {
+    dispatch({
+      type: "ADD_ORDER_ITEMS",
+      payload: cart,
+    });
+  };
 
   return (
     <>
@@ -75,7 +84,9 @@ function CheckOut() {
           </div>
 
           <p>Total: {}</p>
-          <button className="payment-btn">Place Order</button>
+          <button onClick={handlePlaceOrder} className="payment-btn">
+            Place Order
+          </button>
         </div>
       </div>
     </>
