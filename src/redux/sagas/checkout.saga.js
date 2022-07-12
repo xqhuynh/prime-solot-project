@@ -1,15 +1,11 @@
 import axios from 'axios';
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 
 // Saga will listen for 'ADD_ORDER_ITEMS' dispatch 
 function* addOrderToDb(action) {
-    console.log('In addToCart');
+    console.log('In addToCart', action.payload);
     try {
-        const res = yield axios.post('/api/cart', action.payload)
-        // yield put({
-        //     type: "SET_CHECKOUT_ORDER",
-        //     payload: res.data
-        // })
+        yield axios.post('/api/cakes', action.payload)
     }
     catch (error) {
         console.log('Checkout post failed', error);
@@ -17,7 +13,7 @@ function* addOrderToDb(action) {
 }
 
 function* checkoutSaga() {
-    yield takeEvery('ADD_ORDER_ITEMS', addOrderToDb)
+    yield takeLatest('ADD_ORDER_ITEMS', addOrderToDb)
 }
 
 export default checkoutSaga;

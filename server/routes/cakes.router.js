@@ -50,8 +50,32 @@ router.get('/:id', (req, res) => {
 /**
  * POST route template
  */
+
+// Add cart items to db
 router.post('/', (req, res) => {
-  // POST route code here
+
+  const sqlQuery = `INSERT INTO "orders" (userId, productId)
+  VALUES ($1, $2) RETURNING*;`;
+  sqlParams = [
+    req.user.id,
+    req.body[0].id
+  ]
+
+
+
+  // console.log('req.user is:', req.user);
+  console.log('req.body is:', req.body);
+
+  pool.query(sqlQuery, sqlParams)
+    .then((result) => {
+      console.log('Post successful', result.rows[0])
+
+    })
+    .catch((err) => {
+      console.log('Error posting to cart', err);
+    })
+
 });
 
 module.exports = router;
+

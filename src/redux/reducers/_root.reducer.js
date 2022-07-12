@@ -4,7 +4,6 @@ import user from './user.reducer';
 import cakes from './cakes.reducer';
 import cakeDetail from './cakeDetail.reducer';
 import cart from './cart.reducer';
-import checkout from './checkout.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,7 +17,6 @@ const rootReducer = combineReducers({
   cakes, // contains cakes db
   cakeDetail,  // contains active cake for cake detail view
   cart,  // contain active cake in cart
-  checkout // contains items ordered
 });
 
 export default rootReducer;
