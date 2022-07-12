@@ -22,6 +22,7 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import CakeDetail from "../CakeDetail/CakeDetail";
 import Checkout from "../Checkout/Checkout";
 import Cart from "../Cart/Cart";
+import Admin from "../Admin/Admin";
 import "./App.css";
 
 function App() {
@@ -65,6 +66,10 @@ function App() {
 
           <ProtectedRoute path="/checkout" exact>
             <Checkout />
+          </ProtectedRoute>
+
+          <ProtectedRoute path="/admin" exact>
+            <Admin />
           </ProtectedRoute>
 
           <Route exact path="/login">

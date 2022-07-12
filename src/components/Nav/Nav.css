@@ -89,3 +89,13 @@
 .home-link {
   margin-right: auto;
 }
+
+.admin-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: white;
+}
+
+.admin-link:hover {
+  color: rgb(94, 137, 228);
+}

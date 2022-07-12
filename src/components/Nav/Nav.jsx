@@ -85,6 +85,11 @@ function Navbar() {
             <Nav.Item as="li">
               <Nav.Link eventKey="link-3">About</Nav.Link>
             </Nav.Item>
+            <Nav.Item as="li">
+              <Link className="admin-link" to="/admin">
+                Admin
+              </Link>
+            </Nav.Item>
             <div className="profile-cart">
               <Link to="/login">
                 <IconButton aria-label="profile-icon">
