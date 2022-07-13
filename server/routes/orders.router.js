@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
-// GET router to fetch all orders to display on admin page 
+// GET route to fetch all orders to display on admin page 
 router.get('/', rejectUnauthenticated, (req, res) => {
     console.log('/orders GET route');
     // Sql query, join tables and select columns do display
@@ -21,5 +21,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
             console.log('GET /orders/error', err);
         })
 })
+
+// DELETE route to delete specific order item
 
 module.exports = router;

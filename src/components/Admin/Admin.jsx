@@ -6,12 +6,20 @@ import { useSelector, useDispatch } from "react-redux";
 function Admin() {
   // Bring in 'cakes' from redux store
   const cakes = useSelector((store) => store.cakes);
+  const orders = useSelector((store) => store.orders);
   const dispatch = useDispatch();
 
   // useEffect to refresh inventory items after delete
   useEffect(() => {
     dispatch({
       type: "FETCH_CAKES",
+    });
+  }, []);
+
+  // useEffect to fetch orders data on page load
+  useEffect(() => {
+    dispatch({
+      type: "FETCH_ORDERS",
     });
   }, []);
 
@@ -43,21 +51,35 @@ function Admin() {
           <table className="orders-table">
             <thead>
               <tr>
-                <th>Order ID</th>
+                <th>Product ID</th>
                 <th>Item</th>
                 <th>Customer Name</th>
                 <th>Total Amount</th>
                 <th>Status</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
-              {cakes.map((item) => (
-                <tr key={item.id}>
+              {orders.map((order) => (
+                <tr key={order.id}>
+                  <td>{order.id}</td>
+                  <td>{order.name}</td>
+                  <td>Customer Name</td>
+                  <td>${order.price}</td>
                   <td>Placeholder</td>
-                  <td>Placeholder</td>
-                  <td>Placeholder</td>
-                  <td>Placeholder</td>
-                  <td>Placeholder</td>
+                  <td>
+                    <button
+                      onClick={() =>
+                        dispatch({
+                          type: "DELETE_ORDER_ITEM",
+                          payload: { id: order.id },
+                        })
+                      }
+                      className="inventory-button"
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

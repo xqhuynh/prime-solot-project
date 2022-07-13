@@ -7,7 +7,7 @@ function* fetchAllCakes() {
     console.log('In fetchAllCakes saga');
     try {
         const res = yield axios.get('/api/cakes')
-        console.log('Get all:', res.data);
+        console.log('Get all cakes:', res.data);
         yield put({
             type: 'SET_CAKES',
             payload: res.data
