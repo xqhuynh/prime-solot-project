@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./Admin.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,18 +7,14 @@ function Admin() {
   // Bring in 'cakes' from redux store
   const cakes = useSelector((store) => store.cakes);
   const dispatch = useDispatch();
-  // To target individual item, store useParams in id object
-  // localhost:5000/cakes/id where useParams is endpoint after /cakes
-  // which is id
-  const { id } = useParams;
 
-  // function to handle delete button click
-  const deleteBtnHandler = () => {
+  // useEffect to fetch cakes on page load
+  // dispatch 'FETCH_CAKES' to trigger saga
+  useEffect(() => {
     dispatch({
-      type: "DELETE_ITEM",
-      payload: id,
+      type: "FETCH_CAKES",
     });
-  };
+  });
 
   return (
     <>
@@ -94,7 +90,12 @@ function Admin() {
                     <td>{item.description}</td>
                     <td>
                       <button
-                        onClick={deleteBtnHandler}
+                        onClick={() =>
+                          dispatch({
+                            type: "DELETE_ITEM",
+                            payload: { id: item.id },
+                          })
+                        }
                         className="inventory-button"
                       >
                         Delete

@@ -10,7 +10,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 router.get('/', (req, res) => {
   // GET route code here
   console.log('/cake GET route');
-
+  // Sql query
   const queryText = `SELECT * FROM product ORDER BY name ASC ;`;
 
   pool.query(queryText)
@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
     })
 });
 
-// Get single cake item for detail view
+// GET route to fetch single cake item for detail view
+// Target id after endpoint, /cakes/:id
 router.get('/:id', (req, res) => {
   console.log('/cake GET individual cake item');
 
@@ -54,14 +55,13 @@ router.post('/', (req, res) => {
 
   const sqlQuery = `INSERT INTO "orders" (userId, productId)
                       VALUES ($1, $2) RETURNING*;`;
-
   // req.body is array of objects
   sqlParams = [
     req.user.id,
     req.body[0].id
   ]
   // console.log('req.user is:', req.user);
-  // console.log('req.body is:', req.body);
+  console.log('POST req.body is:', req.body);
   pool.query(sqlQuery, sqlParams)
     .then((result) => {
       console.log('Post successful', result.rows[0])
@@ -71,8 +71,24 @@ router.post('/', (req, res) => {
     })
 });
 
-// DELETE route 
-// ability to delete item in admin view
+// DELETE route, ability to delete item in admin view
+// Target id, cakes/:id
+router.delete('/:id', (req, res) => {
+  console.log('DELETE Req.params is:', req.params);
+
+  const sqlQuery = `DELETE FROM "product" WHERE id = $1;`;
+  const sqlParams = [req.params.id];
+
+  pool.query(sqlQuery, sqlParams)
+    .then((result) => {
+      console.log('DELETE item successful');
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log('DELETE item failed', err);
+      res.sendStatus(500);
+    })
+})
 
 module.exports = router;
 
