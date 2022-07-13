@@ -21,6 +21,8 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import CakeDetail from "../CakeDetail/CakeDetail";
 import Checkout from "../Checkout/Checkout";
+import Cart from "../Cart/Cart";
+import Admin from "../Admin/Admin";
 import "./App.css";
 
 function App() {
@@ -39,24 +41,9 @@ function App() {
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
-          {/* 
-          Visiting localhost:3000/about will show the about page.
-          <Route
-            shows AboutPage at all times (logged in or not)
-            exact
-            path="/about"
-          >
-            <AboutPage />
-          </Route> */}
 
-          {/* Details page */}
-          {/* app.get('/cakes/:id') <- req.params.id */}
-          <Route path="/cakes/:id" exact>
-            <CakeDetail />
-          </Route>
-
-          <Route path="/checkout" exact>
-            <Checkout />
+          <Route path="/cart" exact>
+            <Cart />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
@@ -66,24 +53,30 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
+            path="/cart"
           >
-            <UserPage />
+            <Cart />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/info"
-          >
-            <InfoPage />
+          {/* Details page */}
+          {/* app.get('/cakes/:id') <- req.params.id */}
+          <ProtectedRoute path="/cakes/:id" exact>
+            <CakeDetail />
+          </ProtectedRoute>
+
+          <ProtectedRoute path="/checkout" exact>
+            <Checkout />
+          </ProtectedRoute>
+
+          <ProtectedRoute path="/admin" exact>
+            <Admin />
           </ProtectedRoute>
 
           <Route exact path="/login">
             {user.id ? (
               // If the user is already logged in,
               // redirect to the /user page
-              <Redirect to="/user" />
+              <UserPage />
             ) : (
               // Otherwise, show the login page
               <LoginPage />
@@ -94,7 +87,7 @@ function App() {
             {user.id ? (
               // If the user is already logged in,
               // redirect them to the /user page
-              <Redirect to="/user" />
+              <UserPage />
             ) : (
               // Otherwise, show the registration page
               <RegisterPage />
@@ -105,10 +98,10 @@ function App() {
             {user.id ? (
               // If the user is already logged in,
               // redirect them to the /user page
-              <Redirect to="/user" />
+              <LandingPage />
             ) : (
               // Otherwise, show the Landing page
-              <LandingPage />
+              <LoginPage />
             )}
           </Route>
 

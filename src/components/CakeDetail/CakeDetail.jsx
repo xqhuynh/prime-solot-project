@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./CakeDetail.css";
 
 function CakeDetail() {
@@ -19,6 +20,21 @@ function CakeDetail() {
     });
   }, [params.id]);
 
+  // Dispatch ADD_TO_CART action to store item in cart
+  // payload is any info from cakeDetails reducer
+  const addCarthandle = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        id: cakeDetails.id,
+        price: cakeDetails.price,
+        name: cakeDetails.name,
+        image: cakeDetails.image,
+        description: cakeDetails.description,
+      },
+    });
+  };
+
   return (
     <>
       <h2 className="details-header">Cake Details</h2>
@@ -31,11 +47,20 @@ function CakeDetail() {
           <p className="process-time">Process Time: 3-5 days</p>
           <p className="desc-header">Description:</p>
           <p className="details-desc">{cakeDetails.description}</p>
+          <div className="qty-button">
+            <button className="minus-button">-</button>
+            <p>1</p>
+            <button className="plus-button">+</button>
+          </div>
           {/* Buttons */}
-          <button className="details-cart">Add to cart</button>
-          <span>
-            <button className="details-buy">Buy it now</button>
-          </span>
+          <div className="buttons">
+            <button onClick={addCarthandle} className="details-cart">
+              Add to cart
+            </button>
+            <Link to={`/`}>
+              <button className="shop-button">Continue Shopping</button>
+            </Link>
+          </div>
         </div>
       </div>
     </>

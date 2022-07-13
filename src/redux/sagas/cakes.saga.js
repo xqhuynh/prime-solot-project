@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
-// Saga will listen for "FETCH_CAKES" action on page load
+// Saga will listen for "FETCH_CAKES" dispatch on page load
 function* fetchAllCakes() {
     console.log('In fetchAllCakes saga');
     try {

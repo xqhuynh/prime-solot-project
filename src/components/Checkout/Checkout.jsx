@@ -1,12 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Checkout.css";
 import TextField from "@mui/material/TextField";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import CheckoutItem from "../CheckoutItem/CheckoutItem";
 
 function Checkout() {
-  const cakes = useSelector((store) => store.cakes);
+  const cart = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
+
+  // Dispatch action type ADD_ORDER
+  const handlePlaceOrder = () => {
+    dispatch({
+      type: "ADD_ORDER_ITEMS",
+      payload: cart,
+    });
+  };
 
   return (
     <>
@@ -65,15 +75,18 @@ function Checkout() {
             <p className="card-text">PayPal</p>
             <ArrowForwardIosIcon className="paypal-arrow" />
           </div>
-          <div className="sales-info">
-            <p>ORDER SUMMARY</p>
-            <div className="cake-quantity">
-              <p>1 x {cakes[0].name}</p>
-              <p>${cakes[0].price}</p>
-            </div>
+
+          <p>ORDER SUMMARY</p>
+          <div>
+            {cart.map((item) => {
+              return <CheckoutItem key={item.id} item={item} />;
+            })}
           </div>
 
-          <button className="payment-btn">Place Order</button>
+          <p>Total: {}</p>
+          <button onClick={handlePlaceOrder} className="payment-btn">
+            Place Order
+          </button>
         </div>
       </div>
     </>

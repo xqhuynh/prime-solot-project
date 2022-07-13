@@ -1,0 +1,48 @@
+/* admin input section */
+.admin-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: antiquewhite;
+  width: 75%;
+}
+
+.admin-inputs {
+  border: 1px solid black;
+}
+
+/* tables section */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#admin {
+  margin: 5% 5%;
+}
+
+#admin th {
+  background-color: rgb(237, 152, 61);
+}
+
+.inventory-button {
+  background-color: orange;
+  border: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.inventory-button:hover {
+  background-color: rgb(245, 214, 156);
+}

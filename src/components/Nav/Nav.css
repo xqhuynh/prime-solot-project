@@ -77,10 +77,6 @@
   list-style-type: none;
 }
 
-.cart-pic {
-  margin-left: 30px;
-}
-
 .logo {
   width: 130px;
 }
@@ -90,15 +86,16 @@
   color: white;
 }
 
-.profile {
-  margin-right: 20px;
-  margin-left: 30px;
-}
-
-.cart {
-  margin-right: 30px;
-}
-
 .home-link {
   margin-right: auto;
+}
+
+.admin-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: white;
+}
+
+.admin-link:hover {
+  color: rgb(94, 137, 228);
 }

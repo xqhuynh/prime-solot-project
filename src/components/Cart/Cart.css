@@ -1,0 +1,29 @@
+.cart-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  width: 50%;
+  height: auto;
+}
+
+.qty-button {
+  display: inline-flex;
+}
+
+.checkout-button {
+  background-color: orange;
+  border: none;
+  color: white;
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: rgb(243, 194, 104);
+}

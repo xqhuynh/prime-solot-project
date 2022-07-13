@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
+  height: 50vh;
 }
 
 .details-header {
@@ -22,14 +23,15 @@
 }
 
 .details-cart,
-.details-buy {
+.shop-button {
   background-color: orange;
   border: none;
-  width: 100px;
+  width: 150px;
   height: 35px;
   color: white;
   font-size: 0.9rem;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .details-cart {
@@ -69,4 +71,24 @@
 
 .details-cart {
   margin-right: 15px;
+}
+
+.details-cart:hover,
+.shop-button:hover {
+  background-color: rgb(254, 201, 103);
+}
+
+.buttons {
+  text-align: left;
+  margin-top: 25px;
+}
+
+.minus-button,
+.plus-button {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.plus-button {
+  margin-left: 10px;
 }
