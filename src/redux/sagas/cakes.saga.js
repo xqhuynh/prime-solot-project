@@ -3,6 +3,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 // Saga will listen for "FETCH_CAKES" dispatch on page load
 function* fetchAllCakes() {
+    // Get all cakes
     console.log('In fetchAllCakes saga');
     try {
         const res = yield axios.get('/api/cakes')

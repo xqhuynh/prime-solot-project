@@ -9,13 +9,11 @@ function Admin() {
   const dispatch = useDispatch();
 
   // useEffect to refresh inventory items after delete
-  // remove empty array in useEffect so refresh after every delete
-  // dispatch type: 'FETCH_CAKES'
   useEffect(() => {
     dispatch({
       type: "FETCH_CAKES",
     });
-  });
+  }, []);
 
   return (
     <>
