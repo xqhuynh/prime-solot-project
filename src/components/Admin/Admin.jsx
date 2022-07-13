@@ -8,8 +8,9 @@ function Admin() {
   const cakes = useSelector((store) => store.cakes);
   const dispatch = useDispatch();
 
-  // useEffect to fetch cakes on page load
-  // dispatch 'FETCH_CAKES' to trigger saga
+  // useEffect to refresh inventory items after delete
+  // remove empty array in useEffect so refresh after every delete
+  // dispatch type: 'FETCH_CAKES'
   useEffect(() => {
     dispatch({
       type: "FETCH_CAKES",
