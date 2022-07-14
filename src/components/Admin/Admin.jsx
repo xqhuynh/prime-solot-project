@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import AdminCakesList from "../AdminCakesList/AdminCakesList";
 
 function Admin() {
-  // Bring in 'cakes' from redux store
-  const cakes = useSelector((store) => store.cakes);
   const orders = useSelector((store) => store.orders);
   const dispatch = useDispatch();
 
@@ -85,32 +83,9 @@ function Admin() {
               ))}
             </tbody>
           </table>
-
-          {/* Inventory Table */}
-          <div id="admin">
-            <h3>Inventory Table</h3>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Edit</th>
-                  <th>Item</th>
-                  <th>Price</th>
-                  <th>Description</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {cakes.map((cake) => (
-                  <AdminCakesList key={cake.id} cake={cake} />
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <AdminCakesList />
         </div>
       </div>
-      {/* Orders Table */}
     </>
   );
 }

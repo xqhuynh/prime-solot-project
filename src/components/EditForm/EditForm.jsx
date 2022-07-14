@@ -9,8 +9,8 @@ function EditForm() {
   const params = useParams(); // { id: 2 }
 
   // Grab active cake from redux store
-  const cakes = useSelector((store) => store.cakes);
-  console.log("Cakes is: ", cakes);
+  // const editCake = useSelector((store) => store.editCake);
+
   // useEffect to dispatch 'FETCH_ACTIVE_CAKE' on page load
   useEffect(() => {
     dispatch({

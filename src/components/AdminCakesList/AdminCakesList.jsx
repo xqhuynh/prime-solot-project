@@ -1,32 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import AdminCakesItem from "../AdminCakesItem/AdminCakesItem";
 
-function AdminCakesList({ cake }) {
-  const dispatch = useDispatch();
+function AdminCakesList({}) {
+  const cakes = useSelector((store) => store.cakes);
 
   return (
-    <tr>
-      <td>
-        <Link to={`/cakes/${cake.id}/edit`}>Edit</Link>
-      </td>
-      <td>{cake.id}</td>
-      <td>${cake.price}</td>
-      <td>{cake.description}</td>
-      <td>
-        <button
-          onClick={() =>
-            dispatch({
-              type: "DELETE_ITEM",
-              payload: { id: cake.id, name: cake.name },
-            })
-          }
-          className="inventory-button"
-        >
-          Delete
-        </button>
-      </td>
-    </tr>
+    <div className="tables-container">
+      {/* Inventory Table */}
+      <div id="admin">
+        <h3>Inventory Table</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Edit</th>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Description</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {cakes.map((cake) => (
+              <AdminCakesItem key={cake.id} cake={cake} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 
