@@ -52,23 +52,28 @@ router.get('/:id', (req, res) => {
  */
 // Add cart items to db
 router.post('/', (req, res) => {
-
-  const sqlQuery = `INSERT INTO "orders" (userId, productId)
-                      VALUES ($1, $2) RETURNING*;`;
-  // req.body is array of objects
-  sqlParams = [
-    req.user.id,
-    req.body[0].id
-  ]
-  // console.log('req.user is:', req.user);
   console.log('POST req.body is:', req.body);
-  pool.query(sqlQuery, sqlParams)
-    .then((result) => {
-      console.log('Post successful', result.rows[0])
-    })
-    .catch((err) => {
-      console.log('Error posting to cart', err);
-    })
+  // console.log('req.user is:', req.user);
+  let size = Object.keys(req.body).length;
+
+  for (let i = 0; i < size; i++) {
+    const sqlQuery = `INSERT INTO "orders" (userId, productId)
+                      VALUES ($1, $2) RETURNING*;`;
+
+    // req.body is array of objects
+    sqlParams = [
+      req.user.id,
+      req.body[0].id
+    ]
+    pool.query(sqlQuery, sqlParams)
+      .then((result) => {
+        console.log('Post successful', result.rows[0])
+        req.body[0].id++;
+      })
+      .catch((err) => {
+        console.log('Error posting to cart', err);
+      })
+  }
 });
 
 // DELETE route, ability to delete item in admin view

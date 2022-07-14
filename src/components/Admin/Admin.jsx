@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Admin.css";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -101,20 +101,21 @@ function Admin() {
               </tbody>
 
               <tbody>
-                {cakes.map((item) => (
-                  <tr key={item.id}>
+                {cakes.map((order) => (
+                  <tr key={order.id}>
                     <td>
-                      <button className="inventory-button">Edit</button>
+                      <Link to={`/cakes/${order.id}/edit`}>Edit</Link>
+                      {/* <button className="inventory-button">Edit</button> */}
                     </td>
-                    <td>{item.name}</td>
-                    <td>{item.price}</td>
-                    <td>{item.description}</td>
+                    <td>{order.name}</td>
+                    <td>{order.price}</td>
+                    <td>{order.description}</td>
                     <td>
                       <button
                         onClick={() =>
                           dispatch({
                             type: "DELETE_ITEM",
-                            payload: { id: item.id },
+                            payload: { id: order.id },
                           })
                         }
                         className="inventory-button"

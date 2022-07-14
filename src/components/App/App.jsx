@@ -23,6 +23,7 @@ import CakeDetail from "../CakeDetail/CakeDetail";
 import Checkout from "../Checkout/Checkout";
 import Cart from "../Cart/Cart";
 import Admin from "../Admin/Admin";
+import EditForm from "../CakeDetail/EditForm";
 import "./App.css";
 
 function App() {
@@ -41,11 +42,9 @@ function App() {
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
-
           <Route path="/cart" exact>
             <Cart />
           </Route>
-
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
@@ -57,15 +56,18 @@ function App() {
           >
             <Cart />
           </ProtectedRoute>
-
           {/* Details page */}
           {/* app.get('/cakes/:id') <- req.params.id */}
           <ProtectedRoute path="/cakes/:id" exact>
             <CakeDetail />
           </ProtectedRoute>
-
+          {/* Checkout */}
           <ProtectedRoute path="/checkout" exact>
             <Checkout />
+          </ProtectedRoute>
+          {/* Edit cake inventory view */}
+          <ProtectedRoute path="/cakes/:id/edit" exact>
+            <EditForm />
           </ProtectedRoute>
 
           <ProtectedRoute path="/admin" exact>
@@ -82,7 +84,6 @@ function App() {
               <LoginPage />
             )}
           </Route>
-
           <Route exact path="/registration">
             {user.id ? (
               // If the user is already logged in,
@@ -93,7 +94,6 @@ function App() {
               <RegisterPage />
             )}
           </Route>
-
           <Route exact path="/home">
             {user.id ? (
               // If the user is already logged in,
@@ -104,7 +104,6 @@ function App() {
               <LoginPage />
             )}
           </Route>
-
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
