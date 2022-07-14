@@ -74,14 +74,14 @@ router.post('/', (req, res) => {
 // DELETE route, ability to delete item in admin view
 // Target id, cakes/:id
 router.delete('/:id', (req, res) => {
-  console.log('DELETE Req.params is:', req.params);
+  console.log('DELETE inventory item Req.params is:', req.params);
 
   const sqlQuery = `DELETE FROM "product" WHERE id = $1;`;
   const sqlParams = [req.params.id];
 
   pool.query(sqlQuery, sqlParams)
     .then((result) => {
-      console.log('DELETE item successful', result);
+      console.log('DELETE inventory item successful', result);
       res.sendStatus(201);
     })
     .catch((err) => {
