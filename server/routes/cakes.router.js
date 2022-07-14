@@ -95,5 +95,23 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// PUT route, ability to edit cake item in admin view
+router.put('/:id', (req, res) => {
+  // Update single item using req.params.id
+  console.log('Req.body.name is', req.body.name);
+  console.log('Req.params.id', req.params.id);
+  const sqlText = `UPDATE product SET name = $1 WHERE id = $2;`;
+
+  pool.query(sqlText, [req.body.name, req.params.id])
+    .then((result) => {
+      console.log('PUT edit cake successful:', result);
+      res.sendStatus(201)
+    })
+    .catch((err) => {
+      console.log('PUT edit cake failed', err);
+      res.sendStatus(500)
+    })
+})
+
 module.exports = router;
 

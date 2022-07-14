@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Admin.css";
 import { useSelector, useDispatch } from "react-redux";
+import AdminCakesList from "../AdminCakesList/AdminCakesList";
 
 function Admin() {
   // Bring in 'cakes' from redux store
@@ -90,7 +91,7 @@ function Admin() {
             <h3>Inventory Table</h3>
 
             <table>
-              <tbody>
+              <thead>
                 <tr>
                   <th>Edit</th>
                   <th>Item</th>
@@ -98,32 +99,11 @@ function Admin() {
                   <th>Description</th>
                   <th>Delete</th>
                 </tr>
-              </tbody>
+              </thead>
 
               <tbody>
-                {cakes.map((order) => (
-                  <tr key={order.id}>
-                    <td>
-                      <Link to={`/cakes/${order.id}/edit`}>Edit</Link>
-                      {/* <button className="inventory-button">Edit</button> */}
-                    </td>
-                    <td>{order.name}</td>
-                    <td>{order.price}</td>
-                    <td>{order.description}</td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          dispatch({
-                            type: "DELETE_ITEM",
-                            payload: { id: order.id },
-                          })
-                        }
-                        className="inventory-button"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
+                {cakes.map((cake) => (
+                  <AdminCakesList key={cake.id} cake={cake} />
                 ))}
               </tbody>
             </table>

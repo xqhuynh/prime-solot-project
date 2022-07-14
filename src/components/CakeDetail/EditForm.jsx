@@ -7,24 +7,21 @@ function EditForm() {
   const dispatch = useDispatch();
   const history = useHistory();
   const params = useParams(); // { id: 2 }
-  const cakes = useSelector((store) => store.cakeDetail);
 
+  // Grab active cake from redux store
+  const cakes = useSelector((store) => store.cakes);
+  console.log("Cakes is: ", cakes);
   // useEffect to dispatch 'FETCH_ACTIVE_CAKE' on page load
   useEffect(() => {
     dispatch({
       type: "FETCH_ACTIVE_CAKE",
-      payload: Number(params.id),
+      payload: params.id,
     });
   }, [params.id]);
 
   // On click handler for when submit button pressed
   const handleSubmit = (event) => {
-    event.preventDefaul();
-    // Dispatch type 'SAVE_CAKE' to db after edit
-    dispatch({
-      type: "SAVE_CAKE",
-      payload: cakes,
-    });
+    event.preventDefault();
     // Go back to Admin view using useHistory after saving edit
     history.push("/admin");
   };

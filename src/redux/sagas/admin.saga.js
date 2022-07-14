@@ -27,6 +27,7 @@ function* deleteOrderItem(action) {
         yield axios.delete(`/api/orders/` + action.payload.id)
         // axios.get to FETCH_CAKES after delete order item item 
         const res = yield axios.get('/api/orders')
+        // Refresh page after deletion
         yield put({
             type: 'SET_ORDERS',
             payload: res.data
