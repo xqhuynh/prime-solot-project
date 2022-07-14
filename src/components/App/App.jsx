@@ -23,7 +23,7 @@ import CakeDetail from "../CakeDetail/CakeDetail";
 import Checkout from "../Checkout/Checkout";
 import Cart from "../Cart/Cart";
 import Admin from "../Admin/Admin";
-import EditForm from "../CakeDetail/EditForm";
+import EditForm from "../EditForm/EditForm";
 import "./App.css";
 
 function App() {

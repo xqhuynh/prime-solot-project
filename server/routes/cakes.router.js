@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
     // req.body is array of objects
     sqlParams = [
       req.user.id,
-      req.body[0].id
+      req.body[i].id
     ]
     pool.query(sqlQuery, sqlParams)
       .then((result) => {
@@ -99,7 +99,7 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
   // Update single item using req.params.id
   console.log('Req.body.name is', req.body.name);
-  console.log('Req.params.id', req.params.id);
+  console.log('Req.params', req.params);
   const sqlText = `UPDATE product SET name = $1 WHERE id = $2;`;
 
   pool.query(sqlText, [req.body.name, req.params.id])

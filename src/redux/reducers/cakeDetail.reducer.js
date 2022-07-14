@@ -2,8 +2,6 @@ const activeCake = (state = [], action) => {
     switch (action.type) {
         case 'SET_ACTIVE_CAKE':
             return action.payload;
-        case "UPDATE_ACTIVE_CAKE":
-            return { ...state, ...action.payload };
         default:
             return state;
     }

@@ -3,7 +3,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 function* saveCake(action) {
     console.log('Action payload is', action.payload);
-    yield axios.put(`/api/cakes/` + action.payload.id)
+    yield axios.put(`/api/cakes/${action.payload.id}`, action.payload)
     // Refresh page with latest cake data
     yield put({
         type: 'FETCH_CAKES'
