@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./EditForm.css";
 
 function EditForm() {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function EditForm() {
       <h2>Update Cake</h2>
       <form onSubmit={handleSubmit}>
         <input
+          className="edit-cake-input"
           type="text"
           // This shows current cake name in input box
           value={editCake.name}
@@ -53,6 +55,7 @@ function EditForm() {
 
         <input
           type="text"
+          className="edit-cake-input"
           // This shows current cake name in input box
           value={editCake.price}
           // onChange  click event to target editCake.name as payload
@@ -66,6 +69,7 @@ function EditForm() {
 
         <input
           type="text"
+          className="edit-cake-desc"
           // This shows current cake name in input box
           value={editCake.description}
           // onChange  click event to target editCake.name as payload
@@ -76,7 +80,7 @@ function EditForm() {
             })
           }
         />
-        <input type="submit" value="Update Cake" />
+        <input className="edit-cake-button" type="submit" value="Update Cake" />
       </form>
     </>
   );

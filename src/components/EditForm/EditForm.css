@@ -1,0 +1,18 @@
+.edit-cake-input {
+  width: 15%;
+  height: 30px;
+}
+
+.edit-cake-desc {
+  width: 25%;
+  height: 30px;
+}
+
+.edit-cake-button {
+  cursor: pointer;
+  background-color: orange;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
