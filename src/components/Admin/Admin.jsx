@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import AdminCakesList from "../AdminCakesList/AdminCakesList";
 
 function Admin() {
+  // Bring in 'orders' from redux store
   const orders = useSelector((store) => store.orders);
   const dispatch = useDispatch();
 
@@ -68,6 +69,8 @@ function Admin() {
                   <td>${order.price}</td>
                   <td>Placeholder</td>
                   <td>
+                    {/* anonymous on click function to dispatch 'DELETE_ORDER_ITEM'
+                    target order.id as payload */}
                     <button
                       onClick={() =>
                         dispatch({
@@ -84,6 +87,7 @@ function Admin() {
               ))}
             </tbody>
           </table>
+          {/* Bring in AdminCaksList component */}
           <AdminCakesList />
         </div>
       </div>

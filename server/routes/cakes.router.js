@@ -10,7 +10,6 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 router.get('/', (req, res) => {
   // GET route code here
   console.log('/cake GET route');
-  // Sql query
   const queryText = `SELECT * FROM product ORDER BY name ASC ;`;
 
   pool.query(queryText)
@@ -43,24 +42,25 @@ router.get('/:id', (req, res) => {
       res.send(result.rows[0])
     })
     .catch((err) => {
-      console.log('Get cake id failed', err);
+      console.log('GET single cake failed', err);
     })
 })
 
-/**
- * POST route template
- */
-// Add cart items to db
+
+// POST route to add all cart items to db
+
 router.post('/', (req, res) => {
-  console.log('POST req.body is:', req.body);
+  // console.log('POST req.body is:', req.body);
   // console.log('req.user is:', req.user);
   let size = Object.keys(req.body).length;
 
+  // Loop through query and increase 'req.body ++' each time
   for (let i = 0; i < size; i++) {
     const sqlQuery = `INSERT INTO "orders" (userId, productId)
-                      VALUES ($1, $2) RETURNING*;`;
+                        VALUES ($1, $2) RETURNING*;`;
 
     // req.body is array of objects
+    // set req.body index to i such as 'req.body[i]
     sqlParams = [
       req.user.id,
       req.body[i].id
@@ -68,6 +68,7 @@ router.post('/', (req, res) => {
     pool.query(sqlQuery, sqlParams)
       .then((result) => {
         console.log('Post successful', result.rows[0])
+        // Increment req.body[0].id by 1 => 'req.body[0].id ++' after each loop
         req.body[0].id++;
       })
       .catch((err) => {
@@ -79,7 +80,7 @@ router.post('/', (req, res) => {
 // DELETE route, ability to delete item in admin view
 // Target id, cakes/:id
 router.delete('/:id', (req, res) => {
-  console.log('DELETE inventory item Req.params is:', req.params);
+  // console.log('DELETE inventory item Req.params is:', req.params);
 
   const sqlQuery = `DELETE FROM "product" WHERE id = $1;`;
   const sqlParams = [req.params.id];
@@ -98,8 +99,8 @@ router.delete('/:id', (req, res) => {
 // PUT route, ability to edit cake item in admin view
 router.put('/:id', (req, res) => {
   // Update single item using req.params.id
-  console.log('Req.body.name is', req.body.name);
-  console.log('Req.params', req.params);
+  // console.log('Req.body.name is', req.body.name);
+  // console.log('Req.params', req.params);
   const sqlText = `UPDATE product SET name = $1 WHERE id = $2;`;
 
   pool.query(sqlText, [req.body.name, req.params.id])

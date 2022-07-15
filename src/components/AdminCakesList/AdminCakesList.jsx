@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import AdminCakesItem from "../AdminCakesItem/AdminCakesItem";
+import "../Admin/Admin.css";
 
 function AdminCakesList({}) {
+  // Bring in cakes list from redux store
   const cakes = useSelector((store) => store.cakes);
 
   return (
@@ -23,6 +25,7 @@ function AdminCakesList({}) {
           </thead>
 
           <tbody>
+            {/* map through cakes from redux store and pass prop to AdminCakesItem */}
             {cakes.map((cake) => (
               <AdminCakesItem key={cake.id} cake={cake} />
             ))}

@@ -6,13 +6,15 @@ import { useParams } from "react-router-dom";
 function EditForm() {
   const dispatch = useDispatch();
   const history = useHistory();
+  // Call on useParams to target id
   const params = useParams(); // { id: 2 }
 
-  // Grab active cake from redux store
+  // Grab 'cakeDetail' cake from redux store
   const editCake = useSelector((store) => store.cakeDetail);
 
-  console.log("editCake is:", editCake);
+  // console.log("editCake is:", editCake);
   // useEffect to dispatch 'FETCH_ACTIVE_CAKE' on page load
+  // refresh after page reload/load params.id by putting in empty array
   useEffect(() => {
     dispatch({
       type: "FETCH_ACTIVE_CAKE",
@@ -20,7 +22,7 @@ function EditForm() {
     });
   }, [params.id]);
 
-  // On click handler for when submit button pressed
+  // On click handler for when submit button pressed w/dispatch 'SAVE_CAKE' and editCake payload
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
@@ -28,7 +30,7 @@ function EditForm() {
       payload: editCake,
     });
 
-    // Go back to Admin view using useHistory after saving edit
+    // Go back to Admin view using useHistory after saving cake edit
     history.push("/admin");
   };
 
@@ -38,7 +40,9 @@ function EditForm() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          // This shows current cake name in input box
           value={editCake.name}
+          // onChange  click event to target editCake.name as payload
           onChange={(evt) =>
             dispatch({
               type: "UPDATE_ACTIVE_CAKE",

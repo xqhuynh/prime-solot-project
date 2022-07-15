@@ -46,3 +46,15 @@ tr:nth-child(even) {
 .inventory-button:hover {
   background-color: rgb(245, 214, 156);
 }
+
+.edit-button {
+  text-decoration: none;
+}
+
+.edit-text {
+  font-size: 0.9rem;
+  background-color: orange;
+  border-radius: 5px;
+  width: 50px;
+  color: black;
+}

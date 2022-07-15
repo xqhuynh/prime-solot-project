@@ -40,10 +40,10 @@ function Navbar() {
               <Nav.Link href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-1">Shop</Nav.Link>
+              <Link to="/home">Shop</Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-2">Contact</Nav.Link>
+              <Link eventKey="link-2">Contact</Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-3">About</Nav.Link>
