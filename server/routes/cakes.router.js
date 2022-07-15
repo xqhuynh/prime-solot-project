@@ -101,11 +101,11 @@ router.put('/:id', (req, res) => {
   // Update single item using req.params.id
   // console.log('Req.body.name is', req.body.name);
   // console.log('Req.params', req.params);
-  const sqlText = `UPDATE product SET name = $1 WHERE id = $2;`;
+  const sqlText = `UPDATE product SET name = $1, price = $2, description = $3 WHERE id = $4;`;
 
-  pool.query(sqlText, [req.body.name, req.params.id])
+  pool.query(sqlText, [req.body.name, req.body.price, req.body.description, req.params.id])
     .then((result) => {
-      console.log('PUT edit cake successful:', result.rows[0]);
+      console.log('PUT edit cake successful:', result);
       res.sendStatus(201)
     })
     .catch((err) => {

@@ -50,6 +50,32 @@ function EditForm() {
             })
           }
         />
+
+        <input
+          type="text"
+          // This shows current cake name in input box
+          value={editCake.price}
+          // onChange  click event to target editCake.name as payload
+          onChange={(evt) =>
+            dispatch({
+              type: "UPDATE_ACTIVE_CAKE",
+              payload: { price: evt.target.value },
+            })
+          }
+        />
+
+        <input
+          type="text"
+          // This shows current cake name in input box
+          value={editCake.description}
+          // onChange  click event to target editCake.name as payload
+          onChange={(evt) =>
+            dispatch({
+              type: "UPDATE_ACTIVE_CAKE",
+              payload: { description: evt.target.value },
+            })
+          }
+        />
         <input type="submit" value="Update Cake" />
       </form>
     </>

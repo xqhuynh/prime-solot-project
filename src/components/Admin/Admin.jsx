@@ -65,7 +65,7 @@ function Admin() {
                 <tr key={order.id}>
                   <td>7/15/22</td>
                   <td>{order.name}</td>
-                  <td>Schmedan</td>
+                  <td>Savon</td>
                   <td>${order.price}</td>
                   <td>Pending</td>
                   <td>

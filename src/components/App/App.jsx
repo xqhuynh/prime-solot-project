@@ -24,6 +24,7 @@ import Checkout from "../Checkout/Checkout";
 import Cart from "../Cart/Cart";
 import Admin from "../Admin/Admin";
 import EditForm from "../EditForm/EditForm";
+import SuccessPage from "../SuccessPage/SuccessPage";
 import "./App.css";
 
 function App() {
@@ -56,15 +57,23 @@ function App() {
           >
             <Cart />
           </ProtectedRoute>
+
           {/* Details page */}
           {/* app.get('/cakes/:id') <- req.params.id */}
           <ProtectedRoute path="/cakes/:id" exact>
             <CakeDetail />
           </ProtectedRoute>
+
           {/* Checkout */}
           <ProtectedRoute path="/checkout" exact>
             <Checkout />
           </ProtectedRoute>
+
+          {/* Success Page */}
+          <ProtectedRoute path="/cart/checkout/success" exact>
+            <SuccessPage />
+          </ProtectedRoute>
+
           {/* Edit cake inventory view */}
           <ProtectedRoute path="/cakes/:id/edit" exact>
             <EditForm />
@@ -84,6 +93,7 @@ function App() {
               <LoginPage />
             )}
           </Route>
+
           <Route exact path="/registration">
             {user.id ? (
               // If the user is already logged in,
@@ -94,6 +104,7 @@ function App() {
               <RegisterPage />
             )}
           </Route>
+
           <Route exact path="/home">
             {user.id ? (
               // If the user is already logged in,
@@ -104,6 +115,7 @@ function App() {
               <LoginPage />
             )}
           </Route>
+
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>

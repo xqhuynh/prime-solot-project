@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CheckoutItem from "../CheckoutItem/CheckoutItem";
+import { Link } from "react-router-dom";
 
 function Checkout() {
   const cart = useSelector((store) => store.cart);
@@ -84,9 +85,11 @@ function Checkout() {
           </div>
 
           <p>Total: {}</p>
-          <button onClick={handlePlaceOrder} className="payment-btn">
-            Place Order
-          </button>
+          <Link to="/cart/checkout/success/">
+            <button onClick={handlePlaceOrder} className="payment-btn">
+              Place Order
+            </button>
+          </Link>
         </div>
       </div>
     </>
