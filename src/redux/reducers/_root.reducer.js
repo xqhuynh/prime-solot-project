@@ -5,7 +5,7 @@ import cakes from './cakes.reducer';
 import cakeDetail from './cakeDetail.reducer';
 import cart from './cart.reducer';
 import orders from './orders.reducer';
-import editCake from './edit.reducer';
+// import editCake from './edit.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
   cakeDetail,  // contains active cake for cake detail view
   cart,  // contain active cake in cart
   orders, // contains all orders
-  editCake // contains edited cake item
+  // editCake // contains edited cake item
 });
 
 export default rootReducer;

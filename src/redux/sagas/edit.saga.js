@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
+// Generator function to save cake to db afater edit
 function* saveCake(action) {
     console.log('Action payload is', action.payload);
     yield axios.put(`/api/cakes/${action.payload.id}`, action.payload)

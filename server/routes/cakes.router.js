@@ -104,7 +104,7 @@ router.put('/:id', (req, res) => {
 
   pool.query(sqlText, [req.body.name, req.params.id])
     .then((result) => {
-      console.log('PUT edit cake successful:', result);
+      console.log('PUT edit cake successful:', result.rows[0]);
       res.sendStatus(201)
     })
     .catch((err) => {

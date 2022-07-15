@@ -9,7 +9,7 @@ function EditForm() {
   const params = useParams(); // { id: 2 }
 
   // Grab active cake from redux store
-  const editCake = useSelector((store) => store.editCake);
+  const editCake = useSelector((store) => store.cakeDetail);
 
   console.log("editCake is:", editCake);
   // useEffect to dispatch 'FETCH_ACTIVE_CAKE' on page load
@@ -25,10 +25,7 @@ function EditForm() {
     event.preventDefault();
     dispatch({
       type: "SAVE_CAKE",
-      payload: {
-        id: editCake.id,
-        name: editCake.name,
-      },
+      payload: editCake,
     });
 
     // Go back to Admin view using useHistory after saving edit

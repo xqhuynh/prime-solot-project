@@ -8,7 +8,7 @@ function Admin() {
   const orders = useSelector((store) => store.orders);
   const dispatch = useDispatch();
 
-  // useEffect to refresh inventory items after delete
+  // useEffect to refresh inventory data after delete
   useEffect(() => {
     dispatch({
       type: "FETCH_CAKES",
@@ -59,6 +59,7 @@ function Admin() {
               </tr>
             </thead>
             <tbody>
+              {/* map through orders from redux store */}
               {orders.map((order) => (
                 <tr key={order.id}>
                   <td>{order.id}</td>
