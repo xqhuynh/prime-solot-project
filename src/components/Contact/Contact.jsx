@@ -18,6 +18,7 @@ function Contact() {
           <input className="contact first-name" placeholder="First Name" />
           <input className="contact email" placeholder="Email" />
           <input className="contact comment" placeholder="Questions" />
+          <input type="submit" />
         </div>
       </div>
     </>

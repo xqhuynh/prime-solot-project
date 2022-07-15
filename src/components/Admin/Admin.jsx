@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Admin.css";
 import { useSelector, useDispatch } from "react-redux";
+import AdminCakesList from "../AdminCakesList/AdminCakesList";
+import AddItemForm from "../AddItemForm/AddItemForm";
 
 function Admin() {
-  // Bring in 'cakes' from redux store
-  const cakes = useSelector((store) => store.cakes);
+  // Bring in 'orders' from redux store
   const orders = useSelector((store) => store.orders);
   const dispatch = useDispatch();
 
-  // useEffect to refresh inventory items after delete
+  // useEffect to refresh inventory data after delete
   useEffect(() => {
     dispatch({
       type: "FETCH_CAKES",
@@ -25,25 +26,7 @@ function Admin() {
 
   return (
     <>
-      {/* Cake input */}
-      <div className="admin-container">
-        <h2>Admin Page View</h2>
-        <h3>Add Cake</h3>
-        <form>
-          <label>Name</label>
-          <input className="admin-inputs" />
-          <label>Price</label>
-          <input className="admin-inputs" />
-          <label>Upload Photo</label>
-          <input className="admin-inputs" />
-
-          <div>
-            <p>Description</p>
-            <textarea className="admin-inputs" />
-          </div>
-        </form>
-      </div>
-
+      <AddItemForm />
       <div className="tables-container">
         {/* Orders Table */}
         <div id="admin">
@@ -51,8 +34,8 @@ function Admin() {
           <table className="orders-table">
             <thead>
               <tr>
-                <th>Product ID</th>
-                <th>Item</th>
+                <th>Date Ordered</th>
+                <th>Cake Name</th>
                 <th>Customer Name</th>
                 <th>Total Amount</th>
                 <th>Status</th>
@@ -60,14 +43,17 @@ function Admin() {
               </tr>
             </thead>
             <tbody>
+              {/* map through orders from redux store */}
               {orders.map((order) => (
                 <tr key={order.id}>
-                  <td>{order.id}</td>
+                  <td>7/15/22</td>
                   <td>{order.name}</td>
-                  <td>Customer Name</td>
+                  <td>Savon</td>
                   <td>${order.price}</td>
-                  <td>Placeholder</td>
+                  <td>Pending</td>
                   <td>
+                    {/* anonymous on click function to dispatch 'DELETE_ORDER_ITEM'
+                    target order.id as payload */}
                     <button
                       onClick={() =>
                         dispatch({
@@ -84,52 +70,10 @@ function Admin() {
               ))}
             </tbody>
           </table>
-
-          {/* Inventory Table */}
-          <div id="admin">
-            <h3>Inventory Table</h3>
-
-            <table>
-              <tbody>
-                <tr>
-                  <th>Edit</th>
-                  <th>Item</th>
-                  <th>Price</th>
-                  <th>Description</th>
-                  <th>Delete</th>
-                </tr>
-              </tbody>
-
-              <tbody>
-                {cakes.map((item) => (
-                  <tr key={item.id}>
-                    <td>
-                      <button className="inventory-button">Edit</button>
-                    </td>
-                    <td>{item.name}</td>
-                    <td>{item.price}</td>
-                    <td>{item.description}</td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          dispatch({
-                            type: "DELETE_ITEM",
-                            payload: { id: item.id },
-                          })
-                        }
-                        className="inventory-button"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {/* Bring in AdminCaksList component */}
+          <AdminCakesList />
         </div>
       </div>
-      {/* Orders Table */}
     </>
   );
 }

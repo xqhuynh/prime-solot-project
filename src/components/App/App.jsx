@@ -23,6 +23,8 @@ import CakeDetail from "../CakeDetail/CakeDetail";
 import Checkout from "../Checkout/Checkout";
 import Cart from "../Cart/Cart";
 import Admin from "../Admin/Admin";
+import EditForm from "../EditForm/EditForm";
+import SuccessPage from "../SuccessPage/SuccessPage";
 import "./App.css";
 
 function App() {
@@ -41,11 +43,9 @@ function App() {
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
-
           <Route path="/cart" exact>
             <Cart />
           </Route>
-
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
@@ -64,8 +64,19 @@ function App() {
             <CakeDetail />
           </ProtectedRoute>
 
+          {/* Checkout */}
           <ProtectedRoute path="/checkout" exact>
             <Checkout />
+          </ProtectedRoute>
+
+          {/* Success Page */}
+          <ProtectedRoute path="/cart/checkout/success" exact>
+            <SuccessPage />
+          </ProtectedRoute>
+
+          {/* Edit cake inventory view */}
+          <ProtectedRoute path="/cakes/:id/edit" exact>
+            <EditForm />
           </ProtectedRoute>
 
           <ProtectedRoute path="/admin" exact>
