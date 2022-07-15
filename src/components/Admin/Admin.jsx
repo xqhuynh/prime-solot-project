@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Admin.css";
 import { useSelector, useDispatch } from "react-redux";
 import AdminCakesList from "../AdminCakesList/AdminCakesList";
+import AddItemForm from "../AddItemForm/AddItemForm";
 
 function Admin() {
   // Bring in 'orders' from redux store
@@ -25,25 +26,7 @@ function Admin() {
 
   return (
     <>
-      {/* Cake input */}
-      <div className="admin-container">
-        <h2>Admin Page View</h2>
-        <h3>Add Cake</h3>
-        <form>
-          <label>Name</label>
-          <input className="admin-inputs" />
-          <label>Price</label>
-          <input className="admin-inputs" />
-          <label>Upload Photo</label>
-          <input className="admin-inputs" />
-
-          <div>
-            <p>Description</p>
-            <textarea className="admin-inputs" />
-          </div>
-        </form>
-      </div>
-
+      <AddItemForm />
       <div className="tables-container">
         {/* Orders Table */}
         <div id="admin">

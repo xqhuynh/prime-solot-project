@@ -31,7 +31,7 @@ router.delete('/:id', (req, res) => {
 
     pool.query(sqlQuery, sqlParams)
         .then((result) => {
-            console.log('DELETE order item successful', result);
+            console.log('DELETE order item successful');
             res.sendStatus(201);
         })
         .catch((err) => {
