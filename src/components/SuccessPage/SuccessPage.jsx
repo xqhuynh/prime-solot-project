@@ -9,7 +9,7 @@ function SuccessPage() {
       <div className="success-container">
         <img src={CartSuccess} alt="Success" />
         <h2>Order Successful!!!</h2>
-        <h4>You will receive an confirmation email shortly. </h4>
+        <h4>You will receive a confirmation email shortly. </h4>
         <h4>Thank you for shopping at Sweet Surrender!</h4>
         <Link to={`/`}>
           <button className="success-btn shop-button">Continue Shopping</button>

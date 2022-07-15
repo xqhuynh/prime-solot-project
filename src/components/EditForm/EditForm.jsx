@@ -37,51 +37,57 @@ function EditForm() {
 
   return (
     <>
-      <h2>Update Cake</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          className="edit-cake-input"
-          type="text"
-          // This shows current cake name in input box
-          value={editCake.name}
-          // onChange  click event to target editCake.name as payload
-          onChange={(evt) =>
-            dispatch({
-              type: "UPDATE_ACTIVE_CAKE",
-              payload: { name: evt.target.value },
-            })
-          }
-        />
+      <div className="edit-container">
+        <h2 className="edit-header">Update Cake</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            className="edit-cake-input"
+            type="text"
+            // This shows current cake name in input box
+            value={editCake.name}
+            // onChange  click event to target editCake.name as payload
+            onChange={(evt) =>
+              dispatch({
+                type: "UPDATE_ACTIVE_CAKE",
+                payload: { name: evt.target.value },
+              })
+            }
+          />
 
-        <input
-          type="text"
-          className="edit-cake-input"
-          // This shows current cake name in input box
-          value={editCake.price}
-          // onChange  click event to target editCake.name as payload
-          onChange={(evt) =>
-            dispatch({
-              type: "UPDATE_ACTIVE_CAKE",
-              payload: { price: evt.target.value },
-            })
-          }
-        />
+          <input
+            type="text"
+            className="edit-cake-input"
+            // This shows current cake name in input box
+            value={editCake.price}
+            // onChange  click event to target editCake.name as payload
+            onChange={(evt) =>
+              dispatch({
+                type: "UPDATE_ACTIVE_CAKE",
+                payload: { price: evt.target.value },
+              })
+            }
+          />
 
-        <input
-          type="text"
-          className="edit-cake-desc"
-          // This shows current cake name in input box
-          value={editCake.description}
-          // onChange  click event to target editCake.name as payload
-          onChange={(evt) =>
-            dispatch({
-              type: "UPDATE_ACTIVE_CAKE",
-              payload: { description: evt.target.value },
-            })
-          }
-        />
-        <input className="edit-cake-button" type="submit" value="Update Cake" />
-      </form>
+          <input
+            type="text"
+            className="edit-cake-desc"
+            // This shows current cake name in input box
+            value={editCake.description}
+            // onChange  click event to target editCake.name as payload
+            onChange={(evt) =>
+              dispatch({
+                type: "UPDATE_ACTIVE_CAKE",
+                payload: { description: evt.target.value },
+              })
+            }
+          />
+          <input
+            className="edit-cake-button"
+            type="submit"
+            value="Update Cake"
+          />
+        </form>
+      </div>
     </>
   );
 }

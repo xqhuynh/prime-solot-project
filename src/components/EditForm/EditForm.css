@@ -1,11 +1,22 @@
+.edit-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.edit-header {
+  margin-bottom: 20px;
+}
+
 .edit-cake-input {
   width: 15%;
   height: 30px;
+  font-size: 0.9rem;
 }
 
 .edit-cake-desc {
   width: 25%;
   height: 30px;
+  font-size: 0.9rem;
 }
 
 .edit-cake-button {
