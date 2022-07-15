@@ -51,8 +51,8 @@ function Admin() {
           <table className="orders-table">
             <thead>
               <tr>
-                <th>Product ID</th>
-                <th>Item</th>
+                <th>Date Ordered</th>
+                <th>Cake Name</th>
                 <th>Customer Name</th>
                 <th>Total Amount</th>
                 <th>Status</th>
@@ -63,9 +63,9 @@ function Admin() {
               {/* map through orders from redux store */}
               {orders.map((order) => (
                 <tr key={order.id}>
-                  <td>{order.id}</td>
+                  <td>7/15/22</td>
                   <td>{order.name}</td>
-                  <td>Savon</td>
+                  <td>Schmedan</td>
                   <td>${order.price}</td>
                   <td>Pending</td>
                   <td>
