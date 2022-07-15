@@ -65,9 +65,9 @@ function Admin() {
                 <tr key={order.id}>
                   <td>{order.id}</td>
                   <td>{order.name}</td>
-                  <td>Customer Name</td>
+                  <td>Savon</td>
                   <td>${order.price}</td>
-                  <td>Placeholder</td>
+                  <td>Pending</td>
                   <td>
                     {/* anonymous on click function to dispatch 'DELETE_ORDER_ITEM'
                     target order.id as payload */}
