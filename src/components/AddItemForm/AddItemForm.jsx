@@ -4,9 +4,10 @@ import "./AddItemForm.css";
 function AddItemForm() {
   return (
     <>
+      <h2 className="admin-header-title">Admin Page View</h2>
+
       {/* Cake input */}
       <div className="admin-container">
-        <h2>Admin Page View</h2>
         <h3>Add Cake</h3>
         <form>
           <label>Name</label>
@@ -20,6 +21,7 @@ function AddItemForm() {
             <p>Description</p>
             <textarea className="admin-inputs" />
           </div>
+          <input type="submit" value="Add Cake" className="admin-inputs" />
         </form>
       </div>
     </>

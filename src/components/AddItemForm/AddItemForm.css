@@ -1,0 +1,11 @@
+/* admin input section */
+.admin-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: antiquewhite;
+  width: 75%;
+}
+
+.admin-inputs {
+  border: 1px solid black;
+}
