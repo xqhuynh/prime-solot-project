@@ -31,13 +31,20 @@ function AddItemForm() {
     setCakeImage("");
   };
 
+  const autoComplete = () => {
+    setCakeName("Carrot Cake");
+    setCakePrice("40.99");
+    setCakeDescription("Carrot cake");
+    setCakeImage("images/pink-frosting.jpeg");
+  };
+
   return (
     <>
       <h2 className="admin-header-title">Admin Page View</h2>
 
       {/* Cake input */}
       <div className="admin-container">
-        <h3>Add Cake</h3>
+        <h3 onClick={autoComplete}>Add Cake</h3>
         <form onSubmit={handleSubmit}>
           <label>Name</label>
           <input
