@@ -40,4 +40,34 @@ router.delete('/:id', (req, res) => {
         })
 })
 
+// POST route to add all cart items to db
+
+router.post('/', (req, res) => {
+    // console.log('POST req.body is:', req.body);
+    // console.log('req.user is:', req.user);
+    let size = Object.keys(req.body).length;
+
+    // Loop through query and increase 'req.body ++' each time
+    for (let i = 0; i < size; i++) {
+        const sqlQuery = `INSERT INTO "orders" (userId, productId)
+                          VALUES ($1, $2) RETURNING*;`;
+
+        // req.body is array of objects
+        // set req.body index to i such as 'req.body[i]
+        sqlParams = [
+            req.user.id,
+            req.body[i].id
+        ]
+        pool.query(sqlQuery, sqlParams)
+            .then((result) => {
+                console.log('Post successful', result.rows[0])
+                // Increment req.body[0].id by 1 => 'req.body[0].id ++' after each loop
+                req.body[0].id++;
+            })
+            .catch((err) => {
+                console.log('Error posting to cart', err);
+            })
+    }
+});
+
 module.exports = router;

@@ -87,10 +87,10 @@ router.put('/:id', (req, res) => {
 // POST route, ability to add new cake item in admin view
 router.post('/', (req, res) => {
   console.log('POST add cake req.body', req.body);
-  const newCake = [req.body.name, req.body.price, req.body.description];
+  const newCake = [req.body.name, req.body.price, req.body.description, req.body.image];
 
-  const sqlText = `INSERT INTO product (name, price, description)
-                    VALUES ($1, $2, $3);`;
+  const sqlText = `INSERT INTO product (name, price, description, image)
+                    VALUES ($1, $2, $3, $4);`;
 
   pool.query(sqlText, newCake)
     .then((result) => {
@@ -101,37 +101,6 @@ router.post('/', (req, res) => {
       console.log('POST add cake failed', err);
     })
 })
-
-// POST route to add all cart items to db
-
-router.post('/', (req, res) => {
-  // console.log('POST req.body is:', req.body);
-  // console.log('req.user is:', req.user);
-  let size = Object.keys(req.body).length;
-
-  // Loop through query and increase 'req.body ++' each time
-  for (let i = 0; i < size; i++) {
-    const sqlQuery = `INSERT INTO "orders" (userId, productId)
-                        VALUES ($1, $2) RETURNING*;`;
-
-    // req.body is array of objects
-    // set req.body index to i such as 'req.body[i]
-    sqlParams = [
-      req.user.id,
-      req.body[i].id
-    ]
-    pool.query(sqlQuery, sqlParams)
-      .then((result) => {
-        console.log('Post successful', result.rows[0])
-        // Increment req.body[0].id by 1 => 'req.body[0].id ++' after each loop
-        req.body[0].id++;
-      })
-      .catch((err) => {
-        console.log('Error posting to cart', err);
-      })
-  }
-});
-
 
 module.exports = router;
 

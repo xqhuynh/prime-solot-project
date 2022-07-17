@@ -8,6 +8,7 @@ function AddItemForm() {
   const [cakeName, setCakeName] = useState("");
   const [cakePrice, setCakePrice] = useState("");
   const [cakeDescription, setCakeDescription] = useState("");
+  const [cakeImage, setCakeImage] = useState("");
 
   // function to handle submit button, dispatch 'ADD_CAKE'
   const handleSubmit = (evt) => {
@@ -19,6 +20,7 @@ function AddItemForm() {
         name: cakeName,
         price: cakePrice,
         description: cakeDescription,
+        image: cakeImage,
       },
     });
 
@@ -26,6 +28,7 @@ function AddItemForm() {
     setCakeName("");
     setCakePrice("");
     setCakeDescription("");
+    setCakeImage("");
   };
 
   return (
@@ -49,8 +52,12 @@ function AddItemForm() {
             value={cakePrice}
             className="admin-inputs"
           />
-          {/* <label>Upload Photo</label>
-          <input className="admin-inputs" /> */}
+          <label>Upload Photo</label>
+          <input
+            onChange={(event) => setCakeImage(event.target.value)}
+            value={cakeImage}
+            className="admin-inputs"
+          />
 
           <div>
             <p>Description</p>
