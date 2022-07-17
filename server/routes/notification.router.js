@@ -10,6 +10,7 @@ const client = require('twilio')(accountSid, authToken);
 
 // GET sms notification from Twilio
 router.get('/', (req, res) => {
+    // Call function to get SMS notification
     sendTextMessage();
     res.send(`
     <div>
@@ -18,6 +19,8 @@ router.get('/', (req, res) => {
     </div>`)
 })
 
+// function to get sms notification from Twilio after 'Continue Shopping' clicked
+// on SuccessPage
 function sendTextMessage() {
     client.messages
         .create({
