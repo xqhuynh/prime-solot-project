@@ -1,8 +1,12 @@
 const express = require('express');
-const pool = require('../modules/pool');
 const router = express.Router();
-const { rejectUnauthenticated } = require('../modules/authentication-middleware');
-const client = require('twilio')('ACd1dba4ade8696ddb77a63102d3452a8c', 'f02d3e7bacb43f7609f0f262b2e1489d');
+// Bring in dotenv
+require('dotenv').config();
+// set variables for Twilio SID and token
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+
+const client = require('twilio')(accountSid, authToken);
 
 // GET sms notification from Twilio
 router.get('/', (req, res) => {
@@ -17,7 +21,7 @@ router.get('/', (req, res) => {
 function sendTextMessage() {
     client.messages
         .create({
-            body: 'An order has been placed on Sweet Surrender.',
+            body: 'Hi Caroline. An order has been placed on Sweet Surrender.',
             from: '+18573758075',
             to: '16123867919'
         })
