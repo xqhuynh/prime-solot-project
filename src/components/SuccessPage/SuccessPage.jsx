@@ -2,8 +2,17 @@ import React from "react";
 import "./SuccessPage.css";
 import { Link } from "react-router-dom";
 import CartSuccess from "./cart-success.jpeg";
+import { useDispatch } from "react-redux";
 
 function SuccessPage() {
+  const dispatch = useDispatch();
+
+  const onClickHandler = () => {
+    dispatch({
+      type: "FETCH_SMS",
+    });
+  };
+
   return (
     <>
       <div className="success-container">
@@ -12,7 +21,9 @@ function SuccessPage() {
         <h4>You will receive a confirmation email shortly. </h4>
         <h4>Thank you for shopping at Sweet Surrender!</h4>
         <Link to={`/`}>
-          <button className="success-btn shop-button">Continue Shopping</button>
+          <button onClick={onClickHandler} className="success-btn shop-button">
+            Continue Shopping
+          </button>
         </Link>
       </div>
     </>
