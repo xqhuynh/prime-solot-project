@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 import Navbar from "../Nav/Nav";
 import Footer from "../Footer/Footer";
@@ -26,6 +27,7 @@ import Admin from "../Admin/Admin";
 import EditForm from "../EditForm/EditForm";
 import SuccessPage from "../SuccessPage/SuccessPage";
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +40,7 @@ function App() {
 
   return (
     <Router>
+      <ToastContainer />
       <div>
         <Navbar />
         <Switch>

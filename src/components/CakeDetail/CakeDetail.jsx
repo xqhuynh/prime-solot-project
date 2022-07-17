@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./CakeDetail.css";
+import { toast } from "react-toastify";
 
 function CakeDetail() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function CakeDetail() {
 
   // Dispatch ADD_TO_CART action to store item in cart
   // payload is any info from cakeDetails reducer
-  const addCarthandle = () => {
+  const addCartHandle = () => {
     dispatch({
       type: "ADD_TO_CART",
       payload: {
@@ -32,6 +33,9 @@ function CakeDetail() {
         image: cakeDetails.image,
         description: cakeDetails.description,
       },
+    });
+    toast.info(`${cakeDetails.name} added to cart`, {
+      position: "bottom-center",
     });
   };
 
@@ -54,7 +58,7 @@ function CakeDetail() {
           </div>
           {/* Buttons */}
           <div className="buttons">
-            <button onClick={addCarthandle} className="details-cart">
+            <button onClick={addCartHandle} className="details-cart">
               Add to cart
             </button>
             <Link to={`/`}>
