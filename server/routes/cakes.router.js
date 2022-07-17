@@ -47,6 +47,61 @@ router.get('/:id', (req, res) => {
 })
 
 
+// DELETE route, ability to delete item in admin view
+// Target id, cakes/:id
+router.delete('/:id', (req, res) => {
+  // console.log('DELETE inventory item Req.params is:', req.params);
+
+  const sqlQuery = `DELETE FROM "product" WHERE id = $1;`;
+  const sqlParams = [req.params.id];
+
+  pool.query(sqlQuery, sqlParams)
+    .then((result) => {
+      console.log('DELETE inventory item successful');
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log('DELETE item failed', err);
+      res.sendStatus(500);
+    })
+})
+
+// PUT route, ability to edit cake item in admin view
+router.put('/:id', (req, res) => {
+  // Update single item using req.params.id
+  // console.log('Req.body.name is', req.body.name);
+  // console.log('Req.params', req.params);
+  const sqlText = `UPDATE product SET name = $1, price = $2, description = $3 WHERE id = $4;`;
+
+  pool.query(sqlText, [req.body.name, req.body.price, req.body.description, req.params.id])
+    .then((result) => {
+      console.log('PUT edit cake successful:', result);
+      res.sendStatus(201)
+    })
+    .catch((err) => {
+      console.log('PUT edit cake failed', err);
+      res.sendStatus(500)
+    })
+})
+
+// POST route, ability to add new cake item in admin view
+router.post('/', (req, res) => {
+  console.log('POST add cake req.body', req.body);
+  const newCake = [req.body.name, req.body.price, req.body.description];
+
+  const sqlText = `INSERT INTO product (name, price, description)
+                    VALUES ($1, $2, $3);`;
+
+  pool.query(sqlText, newCake)
+    .then((result) => {
+      console.log('POST add cake successful');
+      res.sendStatus(201)
+    })
+    .catch((err) => {
+      console.log('POST add cake failed', err);
+    })
+})
+
 // POST route to add all cart items to db
 
 router.post('/', (req, res) => {
@@ -77,42 +132,6 @@ router.post('/', (req, res) => {
   }
 });
 
-// DELETE route, ability to delete item in admin view
-// Target id, cakes/:id
-router.delete('/:id', (req, res) => {
-  // console.log('DELETE inventory item Req.params is:', req.params);
-
-  const sqlQuery = `DELETE FROM "product" WHERE id = $1;`;
-  const sqlParams = [req.params.id];
-
-  pool.query(sqlQuery, sqlParams)
-    .then((result) => {
-      console.log('DELETE inventory item successful', result);
-      res.sendStatus(201);
-    })
-    .catch((err) => {
-      console.log('DELETE item failed', err);
-      res.sendStatus(500);
-    })
-})
-
-// PUT route, ability to edit cake item in admin view
-router.put('/:id', (req, res) => {
-  // Update single item using req.params.id
-  // console.log('Req.body.name is', req.body.name);
-  // console.log('Req.params', req.params);
-  const sqlText = `UPDATE product SET name = $1, price = $2, description = $3 WHERE id = $4;`;
-
-  pool.query(sqlText, [req.body.name, req.body.price, req.body.description, req.params.id])
-    .then((result) => {
-      console.log('PUT edit cake successful:', result);
-      res.sendStatus(201)
-    })
-    .catch((err) => {
-      console.log('PUT edit cake failed', err);
-      res.sendStatus(500)
-    })
-})
 
 module.exports = router;
 
