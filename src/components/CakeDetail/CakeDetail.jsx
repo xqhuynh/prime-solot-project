@@ -44,13 +44,14 @@ function CakeDetail() {
       <h2 className="details-header">Cake Details</h2>
       {/* Details container */}
       <div className="details-container">
-        <img className="cake-img" src={cakeDetails.image} />
+        <img className="cake-detail-img" src={cakeDetails.image} />
         <div className="details-info">
           <p className="details-name">{cakeDetails.name}</p>
-          <p className="details-price">Price: ${cakeDetails.price}</p>
+          <p className="details-price">${cakeDetails.price}</p>
           <p className="process-time">Process Time: 3-5 days</p>
           <p className="desc-header">Description:</p>
           <p className="details-desc">{cakeDetails.description}</p>
+          <p className="details-quantity">Quantity</p>
           <div className="qty-button">
             <button className="minus-button">-</button>
             <p>1</p>

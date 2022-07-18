@@ -2,8 +2,8 @@
   width: 275px;
   height: 310px;
   margin-bottom: 15px;
-  border: 2px solid rgb(68, 41, 26);
-  box-shadow: 12px 12px 2px 1px rgba(104, 107, 108, 0.2);
+  border: 1px solid rgb(245, 177, 140);
+  box-shadow: 12px 12px 2px 1px rgba(220, 104, 8, 0.2);
   object-fit: cover;
 }
 
