@@ -49,3 +49,20 @@
 .cart-row-data {
   background-color: white;
 }
+
+.cart-total-container {
+  margin-top: 50px;
+}
+
+.cart-total {
+  background-color: orange;
+  width: 200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.sum-text {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: rgb(104, 55, 21);
+}

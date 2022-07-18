@@ -38,7 +38,13 @@ function Cart() {
           </tbody>
         </table>
       </div>
-      <div className="cart-total">{sum}</div>
+
+      <div className="cart-total-container">
+        <h4 className="cart-total">CART TOTAL</h4>
+
+        <p className="sum-text">${sum}</p>
+      </div>
+
       <Link to="/checkout">
         <button className="checkout-button">Checkout</button>
       </Link>
