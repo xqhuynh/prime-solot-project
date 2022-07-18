@@ -27,6 +27,7 @@ function Cart() {
               <th className="cart-col-title">Item</th>
               <th className="cart-col-title">Price</th>
               <th className="cart-col-title">Quantity</th>
+              <th className="cart-col-title">Remove</th>
               <th className="cart-col-title">Total</th>
             </tr>
           </thead>

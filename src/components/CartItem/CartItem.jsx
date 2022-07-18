@@ -1,4 +1,5 @@
 import React from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
 import "./CartItem.css";
 
 function CartItem({ item }) {
@@ -16,6 +17,13 @@ function CartItem({ item }) {
         </td>
         <td className="cart-row-data">
           <p>1</p>
+        </td>
+        <td>
+          <p>
+            <button>
+              <DeleteIcon className="remove-icon" />
+            </button>
+          </p>
         </td>
         <td className="cart-row-data">
           <p>{item.price}</p>
