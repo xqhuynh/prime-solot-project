@@ -9,8 +9,8 @@ function Contact() {
         <div className="contact-left">
           <h3 className="contact-header">Contact Us</h3>
           <p className="contact-desc">
-            Need to get in touch with us? Please fill out the form with your
-            inquiry and we will promptly reply.
+            Have questions or looking to order a custom cake? Please fill out
+            the form and we will respond promptly. Thank you.
           </p>
         </div>
         <div className="parent">
