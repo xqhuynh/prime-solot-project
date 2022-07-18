@@ -7,7 +7,7 @@ function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   return (
-    <div className="container">
+    <div className="user-container">
       <h2 className="welcome-text">Welcome to Sweet Surrender!</h2>
       <LogOutButton className="btn" />
     </div>
