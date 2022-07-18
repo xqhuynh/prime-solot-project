@@ -11,12 +11,27 @@ function Cart() {
 
   return (
     <>
-      <h2>Cart</h2>
-      <div>
-        {cart.map((item) => {
-          return <CartItem key={item.id} item={item} />;
-        })}
+      <h2 className="cart-header">My cart</h2>
+      <hr className="cart-line" />
+      <div className="cart-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th className="cart-col-title">Image</th>
+              <th className="cart-col-title">Item</th>
+              <th className="cart-col-title">Price</th>
+              <th className="cart-col-title">Quantity</th>
+              <th className="cart-col-title">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cart.map((item) => {
+              return <CartItem key={item.id} item={item} />;
+            })}
+          </tbody>
+        </table>
       </div>
+
       <Link to="/checkout">
         <button className="checkout-button">Checkout</button>
       </Link>

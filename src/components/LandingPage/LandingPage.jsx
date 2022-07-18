@@ -20,9 +20,10 @@ function LandingPage() {
   return (
     <div>
       <Carousel />
-      <h2 className="hero-tag">
-        Welcome to Sweet Surrender. Where happiness is in every slice!
-      </h2>
+      <div className="hero-container">
+        <h2 className="hero-tag">Welcome to Sweet Surrender.</h2>
+        <h4 className="hero-subtext">Where happiness is in every slice.</h4>
+      </div>
 
       {/* Cakes List */}
       <CakesList />

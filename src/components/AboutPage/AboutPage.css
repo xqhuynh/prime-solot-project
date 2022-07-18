@@ -14,9 +14,9 @@
 }
 
 .about-header {
-  margin-bottom: 50px;
   padding-top: 30px;
   font-size: 2rem;
+  color: rgb(133, 94, 20);
 }
 
 .baker-img,
@@ -50,6 +50,7 @@
   font-style: italic;
 }
 
-hr {
-  margin-bottom: 10px;
+.about-line {
+  border-top: 4px solid rgb(110, 108, 108);
+  margin-bottom: 50px;
 }

@@ -12,6 +12,7 @@ function AboutPage() {
   return (
     <div className="about-container">
       <h2 className="about-header">Our Sweet Story</h2>
+      <hr className="about-line" />
       <div className="top-content">
         <p className="top-text">
           Sweet Surrender was born out of our pure desire to share our cakes
@@ -37,7 +38,7 @@ function AboutPage() {
         <div className="bottom-desc">
           <h3 className="owner-name">Caroline Huynh</h3>
           <h4 className="owner-title">Accountant by day, baker by night</h4>
-          <hr />
+
           <p className="bottom-text">
             Caroline is the owner and sole baker of Sweet Surrender. Her passion
             and dedication for baking has brought her to create cakes for family

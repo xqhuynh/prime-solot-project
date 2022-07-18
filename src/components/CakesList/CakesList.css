@@ -7,8 +7,8 @@
 }
 
 .cake-header {
-  font-size: 2rem;
-  margin-bottom: 50px;
+  font-size: 1.75rem;
+  color: rgb(172, 99, 4);
 }
 
 .sort {
@@ -25,4 +25,10 @@
   background-color: rgb(222, 219, 219);
   border: 1px solid rgb(188, 185, 185);
   cursor: pointer;
+}
+
+.cake-line {
+  border-top: 1px dotted rgb(184, 170, 157);
+  margin-bottom: 25px;
+  width: 10%;
 }
