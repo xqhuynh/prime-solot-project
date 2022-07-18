@@ -46,3 +46,8 @@ tr:nth-child(even) {
   width: 50px;
   color: black;
 }
+
+.inventory-header,
+.orders-header {
+  margin-bottom: 25px;
+}

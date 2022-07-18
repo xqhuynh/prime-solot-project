@@ -9,6 +9,12 @@ import "./Cart.css";
 function Cart() {
   const cart = useSelector((store) => store.cart);
 
+  // Calculate cart total and parseFloat to get decimal places
+  let sum = 0;
+  for (let amount of cart) {
+    sum += parseFloat(amount.price);
+  }
+
   return (
     <>
       <h2 className="cart-header">My cart</h2>
@@ -25,13 +31,14 @@ function Cart() {
             </tr>
           </thead>
           <tbody>
+            {/* map over cart and pass prop to CartItem component */}
             {cart.map((item) => {
               return <CartItem key={item.id} item={item} />;
             })}
           </tbody>
         </table>
       </div>
-
+      <div className="cart-total">{sum}</div>
       <Link to="/checkout">
         <button className="checkout-button">Checkout</button>
       </Link>

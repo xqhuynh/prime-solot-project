@@ -37,7 +37,7 @@ function Admin() {
       <div className="tables-container">
         {/* Orders Table */}
         <div id="admin">
-          <h3>Orders Table</h3>
+          <h3 className="orders-header">Orders Table</h3>
           <table className="orders-table">
             <thead>
               <tr>
