@@ -43,7 +43,7 @@ function Cart() {
       <div className="cart-total-container">
         <h4 className="cart-total">CART TOTAL</h4>
 
-        <p className="sum-text">${sum}</p>
+        <p className="sum-text">${sum.toFixed(2)}</p>
       </div>
 
       <Link to="/checkout">

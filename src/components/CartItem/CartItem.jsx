@@ -18,7 +18,7 @@ function CartItem({ item }) {
         <td className="cart-row-data">
           <p>1</p>
         </td>
-        <td>
+        <td className="cart-row-data">
           <p>
             <button>
               <DeleteIcon className="remove-icon" />
