@@ -42,7 +42,7 @@ function AddItemForm() {
 
   return (
     <>
-      <h2 className="admin-header-title">Admin Page View</h2>
+      <h2 className="admin-header-title">Admin Page</h2>
       <hr />
 
       {/* Cake input */}
