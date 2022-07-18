@@ -14,12 +14,20 @@ function AboutPage() {
       <h2 className="about-header">Our Sweet Story</h2>
       <div className="top-content">
         <p className="top-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis
-          non orci eu imperdiet. Duis mattis turpis nec arcu lacinia volutpat.
-          Vestibulum sed nisl odio. Proin suscipit lobortis varius. Phasellus
-          placerat elit elit, vitae bibendum magna egestas tincidunt.
-          Suspendisse at scelerisque lorem. Vivamus ut dolor non nisl feugiat
-          ultrices eget eu lacus.
+          Sweet Surrender was born out of our pure desire to share our cakes
+          with everyone. We have witnessed on numerous occasions where the same,
+          boring cakes would make its way to birthday parties, graduation
+          parties, going away parties. The list goes on and on.
+          <br />
+          <br />
+          We wanted to showcase our intricate cakes and convey our message that
+          cakes do not have to be boring. Cakes bring everyone together and as
+          such cakes should be a priority for all gatherings.
+          <br />
+          <br />
+          Cakes are special. Every birthday, every celebration ends with
+          something swee, a cake, and people remember. It's all about the
+          memories.
         </p>
         <img className="baker-img" src={Baking} alt="baker" />
       </div>
@@ -31,12 +39,10 @@ function AboutPage() {
           <h4 className="owner-title">Accountant by day, baker by night</h4>
           <hr />
           <p className="bottom-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            mollis non orci eu imperdiet. Duis mattis turpis nec arcu lacinia
-            volutpat. Vestibulum sed nisl odio. Proin suscipit lobortis varius.
-            Phasellus placerat elit elit, vitae bibendum magna egestas
-            tincidunt. Suspendisse at scelerisque lorem. Vivamus ut dolor non
-            nisl feugiat ultrices eget eu lacus.
+            Caroline is the owner and sole baker of Sweet Surrender. Her passion
+            and dedication for baking has brought her to create cakes for family
+            and friends. Now she wants to make it available to everyone. This is
+            the idea behind Sweet Surrender.
           </p>
         </div>
       </div>

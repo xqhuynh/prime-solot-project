@@ -1,6 +1,7 @@
 .about-container {
   margin-top: 75px;
-  background-color: antiquewhite;
+  background-color: rgb(229, 227, 224);
+  opacity: 0.9;
 }
 
 .top-content,
