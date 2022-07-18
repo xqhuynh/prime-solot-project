@@ -67,7 +67,7 @@ router.delete('/:id', (req, res) => {
 })
 
 // PUT route, ability to edit cake item in admin view
-router.put('/:id', (req, res) => {
+router.put('/:id', rejectUnauthenticated, (req, res) => {
   // Update single item using req.params.id
   // console.log('Req.body.name is', req.body.name);
   // console.log('Req.params', req.params);

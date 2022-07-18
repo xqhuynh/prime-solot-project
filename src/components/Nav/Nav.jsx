@@ -40,10 +40,10 @@ function Navbar() {
               <Nav.Link href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link to="/home">Shop</Link>
+              <Nav.Link href="/">Shop</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link eventKey="link-2">Contact</Link>
+              <Nav.Link href="/">Contact</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-3">About</Nav.Link>
@@ -73,11 +73,11 @@ function Navbar() {
               <img className="logo" src="./images/logo3.png" alt="logo" />
             </Link>
 
-            <Nav.Item as="li">
+            {/* <Nav.Item as="li">
               <Nav.Link href="/">Home</Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
             <Nav.Item as="li">
-              <Nav.Link eventKey="link-1">Shop</Nav.Link>
+              <Nav.Link href="/">Shop</Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
               <Nav.Link eventKey="link-2">Contact</Nav.Link>

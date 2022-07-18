@@ -82,6 +82,7 @@ function App() {
             <EditForm />
           </ProtectedRoute>
 
+          {/* admin view */}
           <ProtectedRoute path="/admin" exact>
             <Admin />
           </ProtectedRoute>
@@ -116,6 +117,15 @@ function App() {
             ) : (
               // Otherwise, show the Landing page
               <LoginPage />
+            )}
+          </Route>
+
+          <Route exact path="/admin">
+            {user.id ? (
+              <Admin />
+            ) : (
+              // Otherwise show Landing Page
+              <LandingPage />
             )}
           </Route>
 

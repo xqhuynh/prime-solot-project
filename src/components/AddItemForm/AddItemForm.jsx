@@ -32,10 +32,12 @@ function AddItemForm() {
   };
 
   const autoComplete = () => {
-    setCakeName("Carrot Cake");
+    setCakeName("USA");
     setCakePrice("40.99");
-    setCakeDescription("Carrot cake");
-    setCakeImage("images/pink-frosting.jpeg");
+    setCakeDescription(
+      "This USA cake is perfect for Independence Day or for when you want to show off your patriotism. USA! USA! USA!"
+    );
+    setCakeImage("images/usa.jpeg");
   };
 
   return (
