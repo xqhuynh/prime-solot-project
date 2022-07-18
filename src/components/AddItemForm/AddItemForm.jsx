@@ -43,25 +43,28 @@ function AddItemForm() {
   return (
     <>
       <h2 className="admin-header-title">Admin Page View</h2>
+      <hr />
 
       {/* Cake input */}
       <div className="admin-container">
-        <h3 onClick={autoComplete}>Add Cake</h3>
+        <h3 className="add-cake-text" onClick={autoComplete}>
+          Add Cake
+        </h3>
         <form onSubmit={handleSubmit}>
-          <label>Name</label>
+          <label className="text">Name</label>
           <input
             onChange={(event) => setCakeName(event.target.value)}
             value={cakeName}
             className="admin-inputs"
           />
 
-          <label>Price</label>
+          <label className="text">Price</label>
           <input
             onChange={(event) => setCakePrice(event.target.value)}
             value={cakePrice}
             className="admin-inputs"
           />
-          <label>Upload Photo</label>
+          <label className="text">Upload Photo</label>
           <input
             onChange={(event) => setCakeImage(event.target.value)}
             value={cakeImage}
@@ -69,14 +72,18 @@ function AddItemForm() {
           />
 
           <div>
-            <p>Description</p>
+            <p className="desc-text">Description</p>
             <textarea
               onChange={(event) => setCakeDescription(event.target.value)}
               value={cakeDescription}
-              className="admin-inputs"
+              className="admin-inputs add-cake-description"
             />
           </div>
-          <input type="submit" value="Add Cake" className="admin-inputs" />
+          <input
+            type="submit"
+            value="Add Cake"
+            className="admin-inputs add-cake-btn"
+          />
         </form>
       </div>
     </>
