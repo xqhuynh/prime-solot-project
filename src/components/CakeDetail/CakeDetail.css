@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
-  height: 50vh;
+  /* height: 100vh; */
 }
 
 .details-header {
@@ -44,19 +44,25 @@
   margin-bottom: 10px;
 }
 
+.details-price {
+  color: grey;
+  margin-bottom: 20px;
+}
+
 .process-time {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
 .details-name {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
 }
 
 .details-desc {
   font-size: 0.9rem;
   text-align: left;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .details-buy {
@@ -86,8 +92,27 @@
 .plus-button {
   width: 25px;
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.plus-button:hover,
+.minus-button:hover {
+  background-color: rgb(228, 219, 219);
+  border: gray;
 }
 
 .plus-button {
   margin-left: 10px;
+}
+
+.cake-detail-img {
+  width: 30%;
+  height: 60%;
+  object-fit: cover;
+  box-shadow: 12px 12px 2px 1px rgba(220, 104, 8, 0.2);
+}
+
+.details-quantity {
+  text-align: left;
+  margin-bottom: 5px;
 }

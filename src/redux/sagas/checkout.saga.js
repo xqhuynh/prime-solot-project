@@ -5,7 +5,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* addOrderToDb(action) {
     console.log('In addToCart', action.payload);
     try {
-        yield axios.post('/api/cakes', action.payload)
+        yield axios.post('/api/orders', action.payload)
     }
     catch (error) {
         console.log('Checkout post failed', error);

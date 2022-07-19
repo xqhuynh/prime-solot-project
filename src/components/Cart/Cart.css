@@ -1,3 +1,9 @@
+.cart-header {
+  font-size: 2rem;
+  margin-top: 50px;
+  color: rgb(133, 91, 12);
+}
+
 .cart-card {
   display: flex;
   justify-content: flex-start;
@@ -26,4 +32,37 @@
 
 .checkout-button:hover {
   background-color: rgb(243, 194, 104);
+}
+
+.cart-line {
+  width: 5%;
+  margin: 5px auto 50px auto;
+  position: relative;
+  border-top: 2px solid rgb(235, 219, 204);
+}
+
+.cart-col-title {
+  background-color: orange;
+  color: white;
+}
+
+.cart-row-data {
+  background-color: white;
+}
+
+.cart-total-container {
+  margin-top: 50px;
+}
+
+.cart-total {
+  background-color: orange;
+  width: 200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.sum-text {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: rgb(104, 55, 21);
 }

@@ -56,9 +56,9 @@ function* fetchOrders() {
 
 // Watcher function for 'DELETE_ITEM' dipatch and function
 function* adminSaga() {
-    yield takeEvery('DELETE_ITEM', deleteInventoryItem),
-        yield takeEvery('FETCH_CAKES', fetchOrders),
-        yield takeEvery('DELETE_ORDER_ITEM', deleteOrderItem)
+    yield takeEvery('DELETE_ITEM', deleteInventoryItem);
+    yield takeEvery('FETCH_CAKES', fetchOrders);
+    yield takeEvery('DELETE_ORDER_ITEM', deleteOrderItem);
 }
 
 export default adminSaga;

@@ -24,13 +24,20 @@ function Admin() {
     });
   }, []);
 
+  // date constructor that uses the following methods to construct the full date
+  const current = new Date();
+  // getMonth() returns month where January is 0, add 1 get current month
+  const date = `${
+    current.getMonth() + 1
+  }/${current.getDate()}/${current.getFullYear()}`;
+
   return (
     <>
       <AddItemForm />
       <div className="tables-container">
         {/* Orders Table */}
         <div id="admin">
-          <h3>Orders Table</h3>
+          <h3 className="orders-header">Orders Table</h3>
           <table className="orders-table">
             <thead>
               <tr>
@@ -46,7 +53,7 @@ function Admin() {
               {/* map through orders from redux store */}
               {orders.map((order) => (
                 <tr key={order.id}>
-                  <td>7/15/22</td>
+                  <td>{date}</td>
                   <td>{order.name}</td>
                   <td>Savon</td>
                   <td>${order.price}</td>

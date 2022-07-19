@@ -20,6 +20,7 @@ function CakesList() {
       <h2 id="shop" className="cake-header">
         Cake Collection
       </h2>
+      <hr className="cake-line" />
       <form className="sort">
         <label className="sort-name">Sort</label>
         <select className="drop-down">

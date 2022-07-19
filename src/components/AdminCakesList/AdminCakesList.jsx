@@ -11,7 +11,7 @@ function AdminCakesList({}) {
     <div className="tables-container">
       {/* Inventory Table */}
       <div id="admin">
-        <h3>Inventory Table</h3>
+        <h3 className="inventory-header">Inventory Table</h3>
 
         <table>
           <thead>

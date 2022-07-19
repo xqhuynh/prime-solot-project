@@ -19,3 +19,16 @@
 .cart-desc {
   width: 20%px;
 }
+
+.cart-item-img {
+  width: 100px;
+}
+
+.cart-table-container {
+  width: 80%;
+  margin: auto;
+}
+
+.remove-icon {
+  cursor: pointer;
+}

@@ -36,7 +36,7 @@
 .payment-btn {
   margin-top: 25px;
   margin-bottom: 25px;
-  width: 80%;
+  width: 70%;
   height: 40px;
   cursor: pointer;
   background-color: orange;
@@ -54,7 +54,7 @@
   display: flex;
   justify-content: center;
   gap: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 250px;
 }
 
 .payment-card,

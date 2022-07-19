@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./CakeDetail.css";
+import { toast } from "react-toastify";
 
 function CakeDetail() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function CakeDetail() {
 
   // Dispatch ADD_TO_CART action to store item in cart
   // payload is any info from cakeDetails reducer
-  const addCarthandle = () => {
+  const addCartHandle = () => {
     dispatch({
       type: "ADD_TO_CART",
       payload: {
@@ -33,6 +34,9 @@ function CakeDetail() {
         description: cakeDetails.description,
       },
     });
+    toast.info(`${cakeDetails.name} added to cart`, {
+      position: "bottom-center",
+    });
   };
 
   return (
@@ -40,13 +44,14 @@ function CakeDetail() {
       <h2 className="details-header">Cake Details</h2>
       {/* Details container */}
       <div className="details-container">
-        <img className="cake-img" src={cakeDetails.image} />
+        <img className="cake-detail-img" src={cakeDetails.image} />
         <div className="details-info">
           <p className="details-name">{cakeDetails.name}</p>
-          <p className="details-price">Price: ${cakeDetails.price}</p>
+          <p className="details-price">${cakeDetails.price}</p>
           <p className="process-time">Process Time: 3-5 days</p>
           <p className="desc-header">Description:</p>
           <p className="details-desc">{cakeDetails.description}</p>
+          <p className="details-quantity">Quantity</p>
           <div className="qty-button">
             <button className="minus-button">-</button>
             <p>1</p>
@@ -54,7 +59,7 @@ function CakeDetail() {
           </div>
           {/* Buttons */}
           <div className="buttons">
-            <button onClick={addCarthandle} className="details-cart">
+            <button onClick={addCartHandle} className="details-cart">
               Add to cart
             </button>
             <Link to={`/`}>

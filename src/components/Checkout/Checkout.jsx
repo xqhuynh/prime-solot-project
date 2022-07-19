@@ -77,14 +77,14 @@ function Checkout() {
             <ArrowForwardIosIcon className="paypal-arrow" />
           </div>
 
-          <p>ORDER SUMMARY</p>
-          <div>
+          {/* <p>ORDER SUMMARY</p> */}
+          {/* <div>
             {cart.map((item) => {
               return <CheckoutItem key={item.id} item={item} />;
             })}
-          </div>
+          </div> */}
 
-          <p>Total: {}</p>
+          {/* <p>Total: {}</p> */}
           <Link to="/cart/checkout/success/">
             <button onClick={handlePlaceOrder} className="payment-btn">
               Place Order

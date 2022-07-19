@@ -7,6 +7,7 @@ import cakeDetailSaga from './cakeDetail.saga';
 import checkoutSaga from './checkout.saga';
 import adminSaga from './admin.saga';
 import editSaga from './edit.saga';
+import smsSaga from './notification.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -24,6 +25,7 @@ export default function* rootSaga() {
     cakeDetailSaga(),
     checkoutSaga(),
     adminSaga(),
-    editSaga()
+    editSaga(),
+    smsSaga()
   ]);
 }

@@ -1,11 +1,60 @@
 /* admin input section */
 .admin-container {
-  margin-top: 50px;
-  margin-bottom: 50px;
   background-color: antiquewhite;
-  width: 75%;
+  width: 90%;
+  margin: 50px auto;
+  border-radius: 10px;
 }
 
 .admin-inputs {
-  border: 1px solid black;
+  border: 1px solid rgb(174, 172, 172);
+  height: 30px;
+  font-size: 0.9rem;
+}
+
+.admin-header-title {
+  margin-top: 50px;
+  font-size: 1.75rem;
+}
+
+.add-cake-text {
+  padding-top: 25px;
+  margin-bottom: 25px;
+  font-size: 1.25rem;
+}
+
+.add-cake-description {
+  width: 35%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.desc-text {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.text {
+  margin-left: 25px;
+}
+
+.add-cake-btn {
+  width: 100px;
+  background-color: orange;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-cake-btn:hover {
+  background-color: rgb(245, 206, 134);
+}
+
+hr {
+  width: 10%;
+  margin: 15px auto;
+  position: relative;
+  border-top: 2px solid rgb(235, 219, 204);
 }
