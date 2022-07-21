@@ -16,8 +16,6 @@ To see the fully functional site, please visit: [https://intense-reaches-03253.h
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
 
 ## Installation
