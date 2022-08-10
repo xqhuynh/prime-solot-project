@@ -35,6 +35,31 @@ How does someone use this application? Tell a user story here.
 5. User can click on the cart icon to go to checkout
 6. User can place order
 
+## Tree Structure
+
+├── PostmanPrimeSoloRoutes.json
+├── PostmanPrimeSoloRoutesv2.json
+├── README.md
+├── database.sql
+├── documentation
+│   └── images
+├── package-lock.json
+├── package.json
+├── public
+│   ├── images
+│   └── index.html
+├── server
+│   ├── constants
+│   ├── modules
+│   ├── routes
+│   ├── server.js
+│   └── strategies
+└── src
+    ├── components
+    ├── hooks
+    ├── index.js
+    └── redux
+
 ## Built With
 
 1. React.js
