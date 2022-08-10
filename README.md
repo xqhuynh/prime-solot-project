@@ -36,7 +36,7 @@ How does someone use this application? Tell a user story here.
 6. User can place order
 
 ## Tree Structure
-
+```
 ├── PostmanPrimeSoloRoutes.json
 ├── PostmanPrimeSoloRoutesv2.json
 ├── README.md
@@ -59,6 +59,7 @@ How does someone use this application? Tell a user story here.
     ├── hooks
     ├── index.js
     └── redux
+```
 
 ## Built With
 
