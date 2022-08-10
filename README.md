@@ -14,10 +14,6 @@ To see the fully functional site, please visit: [https://intense-reaches-03253.h
 
 ![Jul-20-2022 19-05-24](https://user-images.githubusercontent.com/77410880/180102858-12faaea5-176b-4afe-aa2f-9d9424d3e389.gif)
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/en/)
-
 ## Installation
 
 SMS notification is sent to store owner after user clicks 'Place Order' but functionality has been removed in this repo. 
