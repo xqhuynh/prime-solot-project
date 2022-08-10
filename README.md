@@ -63,6 +63,8 @@ How does someone use this application? Tell a user story here.
 
 ## Built With
 
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,nodejs,postgres,)](https://skillicons.dev)
+
 1. React.js
 2. Node.js
 3. Express.js
