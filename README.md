@@ -82,4 +82,4 @@ Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped m
 ## Support
 If you have suggestions or issues, please email me at [xqhuynh@gmail.com](xqhuynh@gmail.com)
 
-Connect with me on [LinkedIn](www.linkedin.com/in/savon-huynh).
+Connect with me on [LinkedIn](https://www.linkedin.com/in/savon-huynh).
