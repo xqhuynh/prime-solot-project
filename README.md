@@ -77,7 +77,7 @@ How does someone use this application? Tell a user story here.
 - Twilio 3rd party API
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
+Thanks to [Prime Digital Academy](https://www.primeacademy.io) who equipped and helped me to make this application a reality.
 
 ## Support
 If you have suggestions or issues, please email me at [xqhuynh@gmail.com](xqhuynh@gmail.com)
