@@ -12,7 +12,7 @@ To see the fully functional site, please visit: [https://intense-reaches-03253.h
 
 ## Screen Shot
 
-![Jul-20-2022 19-05-24](https://user-images.githubusercontent.com/77410880/180102858-12faaea5-176b-4afe-aa2f-9d9424d3e389.gif)
+![Aug-15-2022 09-10-32](https://user-images.githubusercontent.com/77410880/184651641-ebf9de1d-bdff-4ca1-935a-5b6b253ece1e.gif)
 
 ## Installation
 
